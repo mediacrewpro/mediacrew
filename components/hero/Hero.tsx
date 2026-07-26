@@ -327,7 +327,7 @@ export function Hero({ question, services }: HeroProps) {
         data-center-line
         aria-hidden
         style={{ left: 'calc(50% - 1.5px)' }}
-        className="pointer-events-none absolute top-0 z-[4] h-full w-[3px] bg-void/60 opacity-0"
+        className="pointer-events-none absolute top-0 z-[4] hidden h-full w-[3px] bg-void/60 opacity-0 md:block"
       />
 
       {/* Scene 3 — services, revealed by the line as it passes each level.
@@ -336,14 +336,19 @@ export function Hero({ question, services }: HeroProps) {
           so they sit equally close regardless of how wide the words are. */}
       <div className="absolute inset-0 z-20 flex flex-col justify-center gap-3 px-6 md:gap-6">
         {services.map((service) => (
-          <div key={service.key} className="grid grid-cols-2">
+          <div
+            key={service.key}
+            className="flex justify-center md:grid md:grid-cols-2"
+          >
             <div
               data-service={service.key}
+              // Mobile: a single centred column (the two-column split around the
+              // line only makes sense with room, and long titles overflow it).
               // w-fit keeps the blurred box as wide as the words, not the screen.
-              className={`w-fit opacity-0 ${
+              className={`w-fit text-center opacity-0 md:text-left ${
                 service.from === 'left'
-                  ? 'col-start-1 justify-self-end pr-6 md:pr-10'
-                  : 'col-start-2 justify-self-start pl-6 md:pl-10'
+                  ? 'md:col-start-1 md:justify-self-end md:pr-10'
+                  : 'md:col-start-2 md:justify-self-start md:pl-10'
               }`}
             >
               <h3 className="text-[clamp(1.6rem,4vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.005em] text-void">

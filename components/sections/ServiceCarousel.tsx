@@ -39,9 +39,9 @@ export function ServiceCarousel({ label, title, cardCta, cta, cards }: Props) {
       if (!el) return;
 
       const mm = gsap.matchMedia();
-      // Desktop only: the pinned horizontal pan. On mobile the cards stack
-      // vertically (no scroll-jack, nothing wider than the screen).
-      mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+      // The pinned horizontal pan runs on mobile and desktop alike; only the
+      // reduced-motion fallback (below) drops it for a static stack.
+      mm.add('(prefers-reduced-motion: no-preference)', () => {
         // How far the track must slide so its right edge meets the viewport.
         const distance = () => el.scrollWidth - window.innerWidth;
 
@@ -67,7 +67,7 @@ export function ServiceCarousel({ label, title, cardCta, cta, cards }: Props) {
   return (
     <section
       ref={root}
-      className="relative bg-void py-20 [touch-action:pan-y] md:h-dvh md:overflow-hidden md:py-0"
+      className="relative h-dvh overflow-hidden bg-void [touch-action:pan-y] motion-reduce:h-auto motion-reduce:overflow-visible"
       aria-label={label}
     >
       {/* Backdrop behind the card wall. */}
@@ -85,10 +85,10 @@ export function ServiceCarousel({ label, title, cardCta, cta, cards }: Props) {
       <div
         ref={track}
         style={{ position: 'relative', zIndex: 1 }}
-        className="flex flex-col items-center gap-8 px-6 will-change-transform md:h-full md:flex-row md:gap-[clamp(1rem,2.5vw,2.5rem)] md:px-[clamp(1.5rem,6vw,8rem)]"
+        className="flex h-full items-center gap-[clamp(1rem,2.5vw,2.5rem)] px-[clamp(1.5rem,6vw,8rem)] will-change-transform motion-reduce:h-auto motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-6 motion-reduce:py-28"
       >
         {/* Opening panel — the section heading, pans away as the wall arrives. */}
-        <div className="flex w-full flex-col items-center justify-center text-center md:h-full md:w-[min(85vw,30rem)] md:shrink-0 md:pr-6">
+        <div className="flex h-full w-[min(85vw,30rem)] shrink-0 flex-col items-center justify-center pr-6 text-center motion-reduce:h-auto motion-reduce:w-full motion-reduce:pr-0">
           <p className="mb-5 font-mono text-label text-signal">{label}</p>
           {/* Two lines by design: split on the comma so "Dört alan" / "tek ekip"
               each get their own line, a little smaller than the display size. */}
@@ -107,7 +107,7 @@ export function ServiceCarousel({ label, title, cardCta, cta, cards }: Props) {
             key={card.key}
             href={{ pathname: '/services/[slug]', params: { slug: card.key } }}
             aria-label={card.title}
-            className="group relative aspect-[4/5] w-[min(88vw,340px)] overflow-hidden rounded-2xl border border-petrol/40 bg-abyss/30 transition-[border-color,transform] duration-500 hover:border-neon/70 md:h-[min(62vh,600px)] md:w-auto md:shrink-0 md:hover:-translate-y-1"
+            className="group relative aspect-[4/5] h-[min(52vh,430px)] shrink-0 overflow-hidden rounded-2xl border border-petrol/40 bg-abyss/30 transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-neon/70 md:h-[min(62vh,600px)] motion-reduce:h-auto motion-reduce:w-[min(82vw,320px)] motion-reduce:hover:translate-y-0"
           >
             {card.image && (
               <img
@@ -131,7 +131,7 @@ export function ServiceCarousel({ label, title, cardCta, cta, cards }: Props) {
         ))}
 
         {/* Closing panel — reached after the whole wall has passed. */}
-        <div className="flex w-full flex-col items-center justify-center py-2 text-center md:h-full md:w-[min(80vw,26rem)] md:shrink-0 md:px-6 md:py-0">
+        <div className="flex h-full w-[min(80vw,26rem)] shrink-0 flex-col items-center justify-center px-6 text-center motion-reduce:h-auto motion-reduce:w-full motion-reduce:py-8">
           <AuroraButton href="/services">{cta}</AuroraButton>
         </div>
       </div>
