@@ -24,12 +24,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (href) => !href.includes('['),
   );
 
+  // Static pathnames are those without a `[param]` segment — safe to pass to
+  // getPathname as a bare string; the dynamic one must carry its params object.
+  type StaticPath = Exclude<AppPathname, `${string}[${string}`>;
+
   const entry = (
     href: AppPathname,
     params?: Record<string, string>,
   ): MetadataRoute.Sitemap[number] => {
-    const at = (locale: (typeof locales)[number]) =>
-      `${SITE_URL}${getPathname({ locale, href: params ? { pathname: href, params } : href })}`;
+    const at = (locale: (typeof locales)[number]) => {
+      const target = params
+        ? ({ pathname: '/services/[slug]', params: { slug: params.slug } } as const)
+        : (href as StaticPath);
+      return `${SITE_URL}${getPathname({ locale, href: target })}`;
+    };
     return {
       url: at(routing.defaultLocale),
       lastModified: LAST_MODIFIED,

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ComponentProps } from 'react';
 import { useParams } from 'next/navigation';
 import { AnimatePresence, motion } from 'motion/react';
 import { useLocale } from 'next-intl';
@@ -8,7 +8,12 @@ import { Link, usePathname } from '@/i18n/navigation';
 import type { AppLocale, AppPathname } from '@/i18n/routing';
 import { AuroraButton } from '@/components/ui/AuroraButton';
 
-export type NavItem = { href: AppPathname; label: string };
+// Nav links only ever point at static routes — exclude the dynamic
+// `/services/[slug]` template so a bare href satisfies <Link>.
+export type NavItem = {
+  href: Exclude<AppPathname, `${string}[${string}`>;
+  label: string;
+};
 
 type NavProps = {
   items: NavItem[];
@@ -40,10 +45,13 @@ export function Nav({
   // Switching language must carry the current route's params, otherwise a
   // dynamic pathname like /services/[slug] has no slug to fill and next-intl
   // throws. Passing params is harmless for static routes (they have none).
+  // The current route + its params. next-intl resolves this at runtime; the
+  // discriminated href union can't be expressed for a runtime-dynamic pathname,
+  // so we assert the shape the Link accepts.
   const switchHref = {
     pathname,
     params: routeParams,
-  } as { pathname: AppPathname; params: Record<string, string | string[]> };
+  } as unknown as ComponentProps<typeof Link>['href'];
   const panel = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
 

@@ -25,7 +25,9 @@ export async function buildMetadata({
 }: {
   locale: AppLocale;
   metaKey: string;
-  pathname: AppPathname;
+  // Static routes only — every page passes its own fixed path (the dynamic
+  // /services/[slug] page builds its metadata separately).
+  pathname: Exclude<AppPathname, `${string}[${string}`>;
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'meta' });
 
