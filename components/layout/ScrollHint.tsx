@@ -84,15 +84,17 @@ export function ScrollHint({ label }: Props) {
       type="button"
       onClick={scrollDown}
       aria-label={label}
-      className="fixed bottom-7 left-1/2 z-40 flex -translate-x-1/2 flex-col items-center gap-2 opacity-0"
+      className="fixed bottom-7 left-1/2 z-40 flex -translate-x-1/2 flex-col items-center gap-2 opacity-0 mix-blend-difference"
     >
-      <span className="font-mono text-label uppercase tracking-[0.28em] text-light/70 transition-colors duration-300 hover:text-neon">
+      {/* White content + mix-blend-difference: reads black over light
+          backgrounds and white over dark ones, automatically. */}
+      <span className="font-mono text-label uppercase tracking-[0.28em] text-white">
         {label}
       </span>
       <span
         data-bob
         aria-hidden
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-light/20 text-neon backdrop-blur-sm"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/60 text-white"
       >
         <svg
           viewBox="0 0 24 24"
