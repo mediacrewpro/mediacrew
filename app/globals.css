@@ -14,8 +14,10 @@
   --color-abyss: #082a38;
   --color-deep: #0b3d4e;
   --color-petrol: #0a5266;
-  --color-teal: #0a7285;
-  --color-signal: #0fa8ad;
+  /* teal & signal drive the small mono labels; brightened so they stay
+     legible at label size on the dark surfaces. */
+  --color-teal: #14a3ad;
+  --color-signal: #2bcccf;
   --color-bright: #0fc6c6;
   --color-neon: #0adce4;
   --color-light: #f2f4f5;
@@ -42,9 +44,10 @@
   --text-title--letter-spacing: 0.01em;
   --text-title--font-weight: 500;
 
-  --text-label: 0.75rem;
+  --text-label: 0.8125rem;
   --text-label--line-height: 1;
-  --text-label--letter-spacing: 0.18em;
+  --text-label--letter-spacing: 0.15em;
+  --text-label--font-weight: 600;
 
   /* Focus pull — the Kadraj blur scale */
   --blur-focus-1: 4px;

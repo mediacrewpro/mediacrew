@@ -35,7 +35,7 @@
     "services": "Hizmetlerimiz",
     "about": "Hakkımızda",
     "projects": "Projeler",
-    "why": "Neden Biz",
+    "why": "Neden Biz?",
     "contact": "İletişim",
     "team": "Ekibimiz",
     "openMenu": "MENÜ",
@@ -57,10 +57,22 @@
       "title": "Odağa aldığımız markalar",
       "viewAll": "Tüm projeler",
       "items": {
-        "p1": { "title": "Reklam Filmi", "meta": "Prodüksiyon" },
-        "p2": { "title": "Kurumsal Kimlik", "meta": "Marka" },
-        "p3": { "title": "Sosyal Medya Kampanyası", "meta": "Dijital" },
-        "p4": { "title": "Etkinlik Çekimi", "meta": "Prodüksiyon" }
+        "p1": {
+          "title": "Reklam Filmi",
+          "meta": "Prodüksiyon"
+        },
+        "p2": {
+          "title": "Kurumsal Kimlik",
+          "meta": "Marka"
+        },
+        "p3": {
+          "title": "Sosyal Medya Kampanyası",
+          "meta": "Dijital"
+        },
+        "p4": {
+          "title": "Etkinlik Çekimi",
+          "meta": "Prodüksiyon"
+        }
       }
     },
     "why": {
@@ -90,11 +102,13 @@
       "title": "Markanızı odağa alalım",
       "cta": "Proje başlat",
       "mailLabel": "E-posta"
-    }
+    },
+    "scrollHint": "Aşağı Kaydır"
   },
   "footer": {
     "rights": "Tüm hakları saklıdır.",
-    "navLabel": "Sayfalar"
+    "navLabel": "Sayfalar",
+    "contactLabel": "İletişim"
   },
   "contactPage": {
     "label": "İLETİŞİM",
@@ -118,7 +132,9 @@
     "notWired": {
       "title": "Form henüz bağlı değil",
       "body": "Bu formun gönderim altyapısı kurulmadı — mesajınız kimseye ulaşmaz. Şimdilik lütfen doğrudan e-posta gönderin."
-    }
+    },
+    "phoneLabel": "Telefon",
+    "socialLabel": "Sosyal medya"
   },
   "servicesPage": {
     "label": "HİZMETLERİMİZ",
@@ -353,5 +369,62 @@
         "description": "Markanın değerlerini duyguyla anlatan, hikâye odaklı kısa film."
       }
     }
+  },
+  "about": {
+    "label": "Neden Biz?",
+    "heading": "Reklam ajansı değil,\nmarkaların dijital ortağıyız.",
+    "intro": "Klasik reklam ajanslarının yaptığı işlerin aksine; işletmelerin dijital ortağı olmak için var olduk. Temel hedefimiz, birlikte çalıştığımız markaları büyütmek ve bu büyümeyi gerçek kazanca dönüştürmek.",
+    "vision": {
+      "label": "Vizyon",
+      "title": "Onlar büyürse, biz büyürüz.",
+      "body": "Dijital ortaklarımız büyümeli ki biz de büyüyebilelim. Bir işletme bizim sayemizde büyüyorsa, bizim de bu işte başarılı olduğumuz ortaya çıkar. Onların başarısı, doğrudan bizim başarımızdır."
+    },
+    "mission": {
+      "label": "Misyon",
+      "title": "En iyi işi, en sessiz şekilde.",
+      "body": "Bir markanın PR'ını en iyi şekilde yönetmek, aslında kendi PR'ımızı da en iyi şekilde yapmak demektir. Markanızın dijitalini öyle yönetiriz ki, sonuçlar bizim yerimize konuşur."
+    },
+    "quote": "“Sizin dijital operasyonlarınızı kim yönetiyor? Gerçekten çok iyi.”",
+    "quoteCaption": "Bir müşterimize bu soru sorulduğunda bizi işaret etmesi — en büyük referansımız.",
+    "approach": {
+      "label": "Yaklaşımımız",
+      "title": "Yalnızca reklam yönetmiyoruz.",
+      "body": "Sosyal medya içeriği üretmekle kalmıyor, bir işletmenin tüm dijital operasyonunu uçtan uca yönetiyoruz. Yapay zekâyı en verimli şekilde kullanıyor, içerik üretimini kendi çekimlerimizle destekliyoruz."
+    },
+    "capabilitiesLabel": "Neleri yönetiyoruz?",
+    "capabilities": {
+      "web": {
+        "title": "Web & SEO",
+        "body": "Web sitenizden teknik SEO'ya kadar dijital altyapınızın tamamı."
+      },
+      "content": {
+        "title": "İçerik & Prodüksiyon",
+        "body": "İçerik üretimini kendi çekim ve prodüksiyonumuzla besliyoruz."
+      },
+      "ads": {
+        "title": "Performans Reklamları",
+        "body": "Meta ve Google Ads reklamlarını uçtan uca planlıyor ve yönetiyoruz."
+      },
+      "geo": {
+        "title": "GEO & Yapay Zekâ",
+        "body": "GEO ve yapay zekâyı markanız için en verimli noktada kullanıyoruz."
+      },
+      "direction": {
+        "title": "Reji & Organizasyon",
+        "body": "Konser, etkinlik ve tüm organizasyonlara reji ve prodüksiyon hizmeti."
+      },
+      "operations": {
+        "title": "Dijital Operasyon",
+        "body": "Aklınıza gelebilecek tüm dijital operasyonu yönetecek donanıma sahibiz."
+      }
+    },
+    "ctaTitle": "Markanızı büyütmeye hazır mısınız?",
+    "ctaButton": "İletişime geçin"
+  },
+  "floating": {
+    "whatsapp": "WhatsApp'tan yazın",
+    "telegram": "Telegram'dan yazın",
+    "call": "Bizi arayın",
+    "toggle": "İletişim kanalları"
   }
 }

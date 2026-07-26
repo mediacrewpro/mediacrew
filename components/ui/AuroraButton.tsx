@@ -4,7 +4,10 @@ import type { ComponentProps, ReactNode } from 'react';
 import { Link } from '@/i18n/navigation';
 
 type Props = {
-  href: ComponentProps<typeof Link>['href'];
+  /** Provide for a link CTA; omit to render a real <button> (e.g. form submit). */
+  href?: ComponentProps<typeof Link>['href'];
+  /** Button mode only: submit/button/reset. Ignored when `href` is set. */
+  type?: 'button' | 'submit' | 'reset';
   children: ReactNode;
   /** 'md' for content CTAs, 'sm' for the compact navbar button. */
   size?: 'md' | 'sm';
@@ -24,15 +27,15 @@ const SIZES = {
  */
 export function AuroraButton({
   href,
+  type = 'button',
   children,
   size = 'md',
   className = '',
 }: Props) {
-  return (
-    <Link
-      href={href}
-      className={`group relative inline-flex items-center overflow-hidden rounded-full border border-neon/60 bg-white/70 text-center text-void transition-all duration-300 hover:border-neon hover:text-light ${SIZES[size]} ${className}`}
-    >
+  const classes = `group relative inline-flex items-center overflow-hidden rounded-full border border-neon/60 bg-white/70 text-center text-void transition-all duration-300 hover:border-neon hover:text-light ${SIZES[size]} ${className}`;
+
+  const inner = (
+    <>
       {/* Rotating aurora fill, revealed on hover. Centring lives on a wrapper so
           it doesn't fight the inner element's spin transform. */}
       <span
@@ -56,6 +59,20 @@ export function AuroraButton({
       >
         →
       </span>
-    </Link>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <button type={type} className={classes}>
+      {inner}
+    </button>
   );
 }

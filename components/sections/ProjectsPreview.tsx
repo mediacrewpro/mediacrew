@@ -1,7 +1,5 @@
 'use client';
 
-import { useRef } from 'react';
-import { gsap, useGSAP } from '@/lib/gsap';
 import { Link } from '@/i18n/navigation';
 import { AuroraButton } from '@/components/ui/AuroraButton';
 
@@ -21,34 +19,13 @@ type Props = {
 
 /**
  * A taste of the work on the home page — a few real projects, then a button
- * through to the full list. Each card carries its project image.
+ * through to the full list. Each card carries its project image. Kept static
+ * (no scroll-reveal): this section sits after a pinned carousel, where a
+ * ScrollTrigger fade was firing at the wrong point and leaving cards hidden.
  */
 export function ProjectsPreview({ label, title, viewAll, projects }: Props) {
-  const root = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia();
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        gsap.from('[data-project-card]', {
-          opacity: 0,
-          y: 32,
-          duration: 0.8,
-          ease: 'power3.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: root.current,
-            start: 'top 85%',
-            once: true,
-          },
-        });
-      });
-    },
-    { scope: root, dependencies: [projects] },
-  );
-
   return (
-    <section ref={root} className="px-6 py-24 md:px-16 md:py-36">
+    <section className="px-6 py-24 md:px-16 md:py-36">
       <div className="mx-auto max-w-7xl">
         <header className="mb-12 text-center md:mb-16">
           <p className="mb-4 font-mono text-label text-signal">{label}</p>

@@ -1,15 +1,13 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { gsap } from '@/lib/gsap';
-import { useLowPerf } from '@/lib/perf';
 import type { Project, SliderConfig } from '@/types/projects';
 import { ACTIVITY, CHROMA, DEFAULT_SLIDER_CONFIG, MOUSE_DAMP, RENDER_WINDOW } from '@/constants/slider';
 import { clamp, damp, softClamp } from '@/utils/math';
 import { computeSlideMotion, PARKED_MOTION } from '@/animations/slideMotion';
 import { ProjectSlide, type SlideParts } from './ProjectSlide';
 import { SliderChrome } from './SliderChrome';
-import { StaticProjectList } from './StaticProjectList';
 import { useLenis } from '@/hooks/useLenis';
 import { useMouseTilt } from '@/hooks/useMouseTilt';
 
@@ -20,18 +18,10 @@ const VELOCITY_CLAMP = 0.6;
 export function CinematicSlider({ projects, hint, ...overrides }: Props) {
   const config: SliderConfig = { ...DEFAULT_SLIDER_CONFIG, ...overrides };
 
-  // Full experience only on a capable GPU with motion allowed; otherwise a
-  // clean, static, scrollable list (no smooth-scroll, no per-frame transforms).
-  const lowPerf = useLowPerf();
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sync = () => setReduced(mq.matches);
-    sync();
-    mq.addEventListener('change', sync);
-    return () => mq.removeEventListener('change', sync);
-  }, []);
-  const cinematic = !reduced && !lowPerf;
+  // The Projects page always runs the full cinematic experience for every
+  // visitor — no GPU/perf or reduced-motion gating, by product decision. The
+  // animations here must never be stripped out.
+  const cinematic = true;
 
   const partsRef = useRef<(SlideParts | null)[]>([]);
   const parkedRef = useRef<boolean[]>([]);
@@ -176,10 +166,6 @@ export function CinematicSlider({ projects, hint, ...overrides }: Props) {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [cinematic, projects.length, lenisRef]);
-
-  if (!cinematic) {
-    return <StaticProjectList projects={projects} overlayOpacity={config.overlayOpacity} />;
-  }
 
   return (
     <>

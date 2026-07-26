@@ -138,16 +138,13 @@ export function ProjectWheel({ label, viewAll, items }: Props) {
           className="relative h-0 w-full"
           style={{ transformStyle: 'preserve-3d' }}
         >
-          {items.map((item, i) => (
+          {items.map((item) => (
             <Link
               key={item.key}
               href="/projects"
               data-wheel-row
               className="absolute inset-x-0 top-0 flex items-baseline justify-between gap-6 border-b border-petrol/40 pb-5 will-change-transform"
             >
-              <span className="font-mono text-label text-signal">
-                {String(i + 1).padStart(2, '0')}
-              </span>
               <h3 className="text-title text-neon">{item.title}</h3>
               <span className="font-mono text-label text-teal">{item.meta}</span>
             </Link>

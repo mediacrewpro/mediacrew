@@ -4,9 +4,9 @@ import { notFound } from 'next/navigation';
 import { isAppLocale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/metadata';
 import {
-  ServiceCategories,
-  type ServiceCategory,
-} from '@/components/sections/ServiceCategories';
+  ServiceExplorer,
+  type ExplorerCategory,
+} from '@/components/sections/ServiceExplorer';
 
 export async function generateMetadata({
   params,
@@ -50,12 +50,13 @@ export default async function ServicesPage({
 
   const t = await getTranslations();
 
-  const categories: ServiceCategory[] = (
+  const categories: ExplorerCategory[] = (
     Object.keys(CATEGORY_MAP) as (keyof typeof CATEGORY_MAP)[]
   ).map((key) => ({
     key,
     title: t(`services.${key}.title`),
     items: CATEGORY_MAP[key].map((item) => ({
+      id: `${key}:${item}`,
       key: item,
       label: t(`services.${key}.items.${item}`),
     })),
@@ -75,9 +76,10 @@ export default async function ServicesPage({
         </p>
       </header>
 
-      <ServiceCategories
+      <ServiceExplorer
         categories={categories}
         countLabel={t('servicesPage.countLabel')}
+        locale={locale}
       />
     </main>
   );

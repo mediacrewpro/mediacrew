@@ -247,9 +247,6 @@ export function Nav({
                             'filter 400ms cubic-bezier(0.16,1,0.3,1), opacity 400ms cubic-bezier(0.16,1,0.3,1)',
                         }}
                       >
-                        <span className="font-mono text-label text-signal">
-                          {String(i + 1).padStart(2, '0')}
-                        </span>
                         <span
                           className={`text-title uppercase transition-colors duration-300 ${
                             isActive

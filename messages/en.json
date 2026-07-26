@@ -35,7 +35,7 @@
     "services": "Services",
     "about": "About",
     "projects": "Projects",
-    "why": "Why Us",
+    "why": "Why Us?",
     "contact": "Contact",
     "team": "Team",
     "openMenu": "MENU",
@@ -57,10 +57,22 @@
       "title": "Brands we brought into focus",
       "viewAll": "All projects",
       "items": {
-        "p1": { "title": "Commercial Film", "meta": "Production" },
-        "p2": { "title": "Corporate Identity", "meta": "Brand" },
-        "p3": { "title": "Social Media Campaign", "meta": "Digital" },
-        "p4": { "title": "Event Coverage", "meta": "Production" }
+        "p1": {
+          "title": "Commercial Film",
+          "meta": "Production"
+        },
+        "p2": {
+          "title": "Corporate Identity",
+          "meta": "Brand"
+        },
+        "p3": {
+          "title": "Social Media Campaign",
+          "meta": "Digital"
+        },
+        "p4": {
+          "title": "Event Coverage",
+          "meta": "Production"
+        }
       }
     },
     "why": {
@@ -90,11 +102,13 @@
       "title": "Let's bring your brand into focus",
       "cta": "Start a project",
       "mailLabel": "Email"
-    }
+    },
+    "scrollHint": "Scroll Down"
   },
   "footer": {
     "rights": "All rights reserved.",
-    "navLabel": "Pages"
+    "navLabel": "Pages",
+    "contactLabel": "Contact"
   },
   "contactPage": {
     "label": "CONTACT",
@@ -118,7 +132,9 @@
     "notWired": {
       "title": "This form isn't connected yet",
       "body": "No submission backend has been set up — your message would not reach anyone. Please email us directly for now."
-    }
+    },
+    "phoneLabel": "Phone",
+    "socialLabel": "Social"
   },
   "servicesPage": {
     "label": "SERVICES",
@@ -353,5 +369,62 @@
         "description": "A story-driven short film that conveys the brand's values with emotion."
       }
     }
+  },
+  "about": {
+    "label": "Why Us?",
+    "heading": "Not an ad agency —\nyour brand's digital partner.",
+    "intro": "Unlike a classic advertising agency, we exist to be the digital partner of the businesses we work with. Our core goal is to grow the brands beside us and turn that growth into real revenue.",
+    "vision": {
+      "label": "Vision",
+      "title": "When they grow, we grow.",
+      "body": "Our digital partners have to grow for us to grow. If a business is scaling because of us, it proves we're good at what we do. Their success is, directly, our success."
+    },
+    "mission": {
+      "label": "Mission",
+      "title": "The best work, quietly done.",
+      "body": "Running a brand's PR at its best means running our own PR at its best. We manage your digital presence so well that the results speak for us."
+    },
+    "quote": "“Who runs your digital operations? They're really good.”",
+    "quoteCaption": "When a client is asked that and points to us — that's our greatest reference.",
+    "approach": {
+      "label": "Our Approach",
+      "title": "We don't just run ads.",
+      "body": "Beyond producing social content, we manage a business's entire digital operation end to end. We use AI where it matters most and back our content with our own shoots."
+    },
+    "capabilitiesLabel": "What we manage",
+    "capabilities": {
+      "web": {
+        "title": "Web & SEO",
+        "body": "Your full digital foundation, from the website to technical SEO."
+      },
+      "content": {
+        "title": "Content & Production",
+        "body": "Content creation fed by our own shoots and production."
+      },
+      "ads": {
+        "title": "Performance Ads",
+        "body": "Meta and Google Ads planned and managed end to end."
+      },
+      "geo": {
+        "title": "GEO & AI",
+        "body": "GEO and AI used at the exact point they benefit your brand."
+      },
+      "direction": {
+        "title": "Direction & Events",
+        "body": "Direction and production for concerts, events and organizations."
+      },
+      "operations": {
+        "title": "Digital Operations",
+        "body": "The capability to run every digital operation you can think of."
+      }
+    },
+    "ctaTitle": "Ready to grow your brand?",
+    "ctaButton": "Get in touch"
+  },
+  "floating": {
+    "whatsapp": "Message on WhatsApp",
+    "telegram": "Message on Telegram",
+    "call": "Call us",
+    "toggle": "Contact channels"
   }
 }

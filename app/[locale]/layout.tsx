@@ -12,6 +12,7 @@ import { SITE_URL } from '@/lib/metadata';
 import { ApertureLoader } from '@/components/loader/ApertureLoader';
 import { Nav, type NavItem } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
+import { FloatingContact } from '@/components/layout/FloatingContact';
 import { OrganizationSchema } from '@/components/seo/OrganizationSchema';
 import '../globals.css';
 
@@ -80,10 +81,12 @@ export default async function LocaleLayout({
             ctaLabel={tNav('cta')}
           />
           {children}
+          <FloatingContact />
           <Footer
             items={navItems}
             rights={tFooter('rights')}
             navLabel={tFooter('navLabel')}
+            contactLabel={tFooter('contactLabel')}
             year={new Date().getFullYear()}
           />
         </NextIntlClientProvider>

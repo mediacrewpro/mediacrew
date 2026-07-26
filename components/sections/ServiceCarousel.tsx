@@ -68,6 +68,18 @@ export function ServiceCarousel({ label, title, cardCta, cta, cards }: Props) {
       className="relative h-dvh overflow-hidden bg-void [touch-action:pan-y] motion-reduce:h-auto motion-reduce:overflow-visible"
       aria-label={label}
     >
+      {/* Backdrop behind the card wall. */}
+      <img
+        src="/services-cards-bg.webp"
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+      />
+      {/* Scrim keeps the cards and heading legible over the backdrop. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-void/60"
+      />
       <div
         ref={track}
         style={{ position: 'relative', zIndex: 1 }}
@@ -88,7 +100,7 @@ export function ServiceCarousel({ label, title, cardCta, cta, cards }: Props) {
         </div>
 
         {/* Cards — each links to its own service detail page. */}
-        {cards.map((card, i) => (
+        {cards.map((card) => (
           <Link
             key={card.key}
             href={{ pathname: '/services/[slug]', params: { slug: card.key } }}
@@ -105,10 +117,7 @@ export function ServiceCarousel({ label, title, cardCta, cta, cards }: Props) {
             )}
             {/* Scrim keeps the name legible over any photo. */}
             <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-void via-void/55 to-transparent p-6 pt-20 text-center">
-              <span className="font-mono text-label text-signal">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3 className="mt-1 text-2xl font-medium tracking-tight text-light md:text-3xl">
+              <h3 className="text-2xl font-medium tracking-tight text-light md:text-3xl">
                 {card.title}
               </h3>
               <span className="mt-3 inline-flex items-center gap-2 font-mono text-label text-neon opacity-0 transition-opacity duration-300 group-hover:opacity-100">

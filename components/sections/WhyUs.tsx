@@ -53,10 +53,7 @@ export function WhyUs({ label, title, items }: WhyUsProps) {
             data-why-card
             className="group bg-void p-8 text-center transition-colors duration-500 hover:bg-abyss/40 md:p-12"
           >
-            <span className="font-mono text-label text-signal">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <h3 className="mt-6 text-2xl font-medium tracking-tight text-light transition-colors duration-300 group-hover:text-neon md:text-3xl">
+            <h3 className="text-2xl font-medium tracking-tight text-light transition-colors duration-300 group-hover:text-neon md:text-3xl">
               {item.title}
             </h3>
             <p className="mx-auto mt-4 max-w-[46ch] text-base leading-relaxed text-light/55">

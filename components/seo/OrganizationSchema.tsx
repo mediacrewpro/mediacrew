@@ -1,9 +1,10 @@
 import { SITE_URL } from '@/lib/metadata';
+import { CONTACT } from '@/lib/contact';
 
 /**
- * Organization structured data. Kept deliberately minimal: only facts that are
- * actually true right now. Phone, address and social profiles are omitted until
- * the client supplies real values — inventing them would be worse than absent.
+ * Organization structured data. Only facts that are actually true: real email,
+ * phones and social profile now that the client has supplied them. Address and
+ * logo stay omitted until real values exist.
  */
 export function OrganizationSchema({ description }: { description: string }) {
   const data = {
@@ -12,6 +13,9 @@ export function OrganizationSchema({ description }: { description: string }) {
     name: 'MediaCrew',
     url: SITE_URL,
     description,
+    email: CONTACT.email,
+    telephone: CONTACT.phones.map((p) => p.e164),
+    sameAs: [CONTACT.instagram.url],
     // logo intentionally omitted until a real asset exists — a 404'd logo
     // url in structured data is worse than none.
   };

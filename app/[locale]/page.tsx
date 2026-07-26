@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { isAppLocale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/metadata';
 import { Hero, type HeroService } from '@/components/hero/Hero';
+import { ScrollHint } from '@/components/layout/ScrollHint';
 import {
   ServiceCarousel,
   type CarouselCard,
@@ -16,9 +17,7 @@ import { WhyUs, type WhyItem } from '@/components/sections/WhyUs';
 import { ContactCta } from '@/components/sections/ContactCta';
 import { generatedServiceCards } from '@/lib/service-cards.generated';
 import { PROJECT_SLIDES } from '@/lib/projects-data';
-
-// Placeholder until the real address is confirmed.
-const CONTACT_EMAIL = 'hello@mediacrew.com';
+import { CONTACT } from '@/lib/contact';
 
 // Carousel order — grouped by discipline (advertising → web → social →
 // production), not alphabetical. Slugs not listed here fall to the end, so a
@@ -97,11 +96,8 @@ export default async function HomePage({
 
   return (
     <main>
-      <Hero
-        question={t('hero.question')}
-        scrollHint={t('hero.scrollHint')}
-        services={services}
-      />
+      <Hero question={t('hero.question')} services={services} />
+      <ScrollHint label={t('home.scrollHint')} />
 
       <ServiceCarousel
         label={t('servicesPage.label')}
@@ -129,7 +125,7 @@ export default async function HomePage({
         title={t('home.contact.title')}
         cta={t('home.contact.cta')}
         mailLabel={t('home.contact.mailLabel')}
-        email={CONTACT_EMAIL}
+        email={CONTACT.email}
       />
     </main>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { AuroraButton } from '@/components/ui/AuroraButton';
 
 type Labels = {
   name: string;
@@ -69,7 +70,7 @@ export function ContactForm({
   };
 
   const field =
-    'w-full border-b border-petrol/50 bg-transparent py-3 text-lg text-light outline-none transition-colors placeholder:text-light/25 focus:border-neon';
+    'w-full border-b border-void/20 bg-transparent py-3 text-lg text-void outline-none transition-colors placeholder:text-void/25 focus:border-teal';
 
   return (
     <form onSubmit={onSubmit} noValidate className="max-w-2xl">
@@ -145,7 +146,7 @@ export function ContactForm({
           }
           className={`${field} mt-2 resize-y`}
         />
-        <p id="message-hint" className="mt-2 text-sm text-light/40">
+        <p id="message-hint" className="mt-2 text-sm text-void/45">
           {labels.messageHint}
         </p>
         {errors.message && (
@@ -155,12 +156,9 @@ export function ContactForm({
         )}
       </div>
 
-      <button
-        type="submit"
-        className="mt-10 border border-neon px-8 py-4 font-mono text-label text-neon transition-colors duration-300 hover:bg-neon hover:text-void"
-      >
-        {labels.submit}
-      </button>
+      <div className="mt-10">
+        <AuroraButton type="submit">{labels.submit}</AuroraButton>
+      </div>
 
       {blocked && (
         <div

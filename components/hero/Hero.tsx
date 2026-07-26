@@ -19,11 +19,10 @@ export type HeroService = {
 
 type HeroProps = {
   question: string;
-  scrollHint: string;
   services: HeroService[];
 };
 
-export function Hero({ question, scrollHint, services }: HeroProps) {
+export function Hero({ question, services }: HeroProps) {
   const root = useRef<HTMLDivElement>(null);
 
   // three.js is ~866KB. The bokeh isn't visible until ~65% of this sequence,
@@ -160,8 +159,7 @@ export function Hero({ question, scrollHint, services }: HeroProps) {
           const Q_IN = SCRUB_UNITS; // question appears as the video ends
           const Q_OUT = Q_IN + 1.8;
 
-          tl.to('[data-scroll-hint]', { opacity: 0, duration: 0.5 }, SCRUB_UNITS - 0.5)
-            .fromTo(
+          tl.fromTo(
               '[data-question-text]',
               { filter: focus(24), opacity: 0, scale: 1.04 },
               { filter: 'blur(0px)', opacity: 1, scale: 1, duration: 1.2 },
@@ -356,13 +354,6 @@ export function Hero({ question, scrollHint, services }: HeroProps) {
         ))}
       </div>
 
-      {/* Scroll affordance — people need to be told the page moves */}
-      <div
-        data-scroll-hint
-        className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2"
-      >
-        <span className="font-mono text-label text-teal">{scrollHint}</span>
-      </div>
     </section>
   );
 }

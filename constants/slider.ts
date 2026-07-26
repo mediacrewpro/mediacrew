@@ -13,7 +13,7 @@ export const DEFAULT_SLIDER_CONFIG: SliderConfig = {
   mouseTilt: 3.5,
   grayscale: true,
   snap: false,
-  showCounter: true,
+  showCounter: false,
   showProgress: true,
   showHint: true,
 };
