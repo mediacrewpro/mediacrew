@@ -1,0 +1,9 @@
+# Root -> default locale (proxy.ts normally does this; static export can't)
+/                    /tr/                 302
+
+# Turkish localized slugs -> internal exported paths (200 = rewrite, URL stays)
+/tr/hizmetlerimiz    /tr/services/        200
+/tr/hakkimizda       /tr/about/           200
+/tr/projeler         /tr/projects/        200
+/tr/neden-biz        /tr/why-us/          200
+/tr/iletisim         /tr/contact/         200

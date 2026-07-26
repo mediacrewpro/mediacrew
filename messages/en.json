@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "siteName": "MediaCrew",
+    "home": {
+      "title": "MediaCrew — We bring your brand into focus",
+      "description": "Advertising, web, social media and production under one roof. The creative agency that brings your brand into focus."
+    },
+    "services": {
+      "title": "Services — MediaCrew",
+      "description": "From Google SEO to commercial film, CRM to drone shoots — 23 services. Four disciplines, one crew."
+    },
+    "about": {
+      "title": "About — MediaCrew",
+      "description": "The story, approach and team behind MediaCrew."
+    },
+    "projects": {
+      "title": "Projects — MediaCrew",
+      "description": "The brands we brought into focus and the work we've delivered."
+    },
+    "why": {
+      "title": "Why Us — MediaCrew",
+      "description": "One team under one roof, our own production crew, measurable results. Why work with MediaCrew."
+    },
+    "contact": {
+      "title": "Contact — MediaCrew",
+      "description": "Tell us about your project and we'll come back within one business day."
+    },
+    "team": {
+      "title": "Team — MediaCrew",
+      "description": "The people behind MediaCrew."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "projects": "Projects",
+    "why": "Why Us",
+    "contact": "Contact",
+    "team": "Team",
+    "openMenu": "MENU",
+    "closeMenu": "CLOSE",
+    "cta": "Get in Touch",
+    "switchLanguage": "Türkçe'ye geç"
+  },
+  "hero": {
+    "question": "What We Do",
+    "scrollHint": "SCROLL"
+  },
+  "loader": {
+    "loading": "Loading",
+    "skip": "PRESS ESC TO SKIP"
+  },
+  "home": {
+    "projects": {
+      "label": "SELECTED WORK",
+      "title": "Brands we brought into focus",
+      "viewAll": "All projects",
+      "items": {
+        "p1": { "title": "Commercial Film", "meta": "Production" },
+        "p2": { "title": "Corporate Identity", "meta": "Brand" },
+        "p3": { "title": "Social Media Campaign", "meta": "Digital" },
+        "p4": { "title": "Event Coverage", "meta": "Production" }
+      }
+    },
+    "why": {
+      "label": "WHY US",
+      "title": "The work you don't see",
+      "items": {
+        "w1": {
+          "title": "One roof",
+          "body": "Advertising, web, social and production in the same team. Nothing gets lost between agencies."
+        },
+        "w2": {
+          "title": "Our own crew",
+          "body": "From the shoot to the live broadcast, the people on set are ours. No subcontractor chain, one line of responsibility."
+        },
+        "w3": {
+          "title": "Measurable outcomes",
+          "body": "Every campaign is reported in numbers. Conversions talk, not likes."
+        },
+        "w4": {
+          "title": "Brand before trend",
+          "body": "We don't chase formats. We find the brand's own voice and repeat it consistently."
+        }
+      }
+    },
+    "contact": {
+      "label": "CONTACT",
+      "title": "Let's bring your brand into focus",
+      "cta": "Start a project",
+      "mailLabel": "Email"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "navLabel": "Pages"
+  },
+  "contactPage": {
+    "label": "CONTACT",
+    "title": "Tell us about your project",
+    "intro": "Write what you want to make and we'll come back within one business day.",
+    "name": "Full name",
+    "email": "Email",
+    "company": "Brand / Company",
+    "message": "Your project",
+    "messageHint": "A short summary is enough: what, for whom, by when.",
+    "optional": "optional",
+    "submit": "Send",
+    "sending": "Sending…",
+    "prefill": "Hi, I'd like to learn more about your {service} service.",
+    "directLabel": "Write directly",
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "Please enter a valid email address.",
+      "message": "Tell us about your project in a few sentences."
+    },
+    "notWired": {
+      "title": "This form isn't connected yet",
+      "body": "No submission backend has been set up — your message would not reach anyone. Please email us directly for now."
+    }
+  },
+  "servicesPage": {
+    "label": "SERVICES",
+    "title": "Four disciplines, one crew",
+    "intro": "From advertising to production, everything runs under one roof. No brief gets lost between agencies.",
+    "countLabel": "services",
+    "cardCta": "Explore",
+    "carouselCta": "Click for more services",
+    "scrollHint": "SCROLL"
+  },
+  "services": {
+    "ads": {
+      "title": "ADVERTISING",
+      "items": {
+        "seo": "Google SEO",
+        "meta": "Meta Management",
+        "tiktok": "TikTok Ads",
+        "youtube": "YouTube Ads"
+      }
+    },
+    "web": {
+      "title": "WEB SERVICES",
+      "items": {
+        "design": "Web Design",
+        "crm": "CRM",
+        "automation": "Automation"
+      }
+    },
+    "social": {
+      "title": "SOCIAL MEDIA",
+      "items": {
+        "instagram": "Instagram Content & Management",
+        "facebook": "Facebook Content & Management",
+        "tiktok": "TikTok Content & Management",
+        "youtube": "YouTube Content & Management"
+      }
+    },
+    "pr": {
+      "title": "PR & PRODUCTION",
+      "items": {
+        "photo": "Photography",
+        "commercial": "Commercial Film",
+        "video": "Video Production",
+        "direction": "Broadcast Direction",
+        "shortFilm": "Short Film",
+        "live": "Live Streaming",
+        "event": "Event Coverage",
+        "drone": "Drone Filming",
+        "influencer": "Influencer PR",
+        "brand": "Brand Management",
+        "identity": "Corporate Identity",
+        "graphic": "Graphic Design"
+      }
+    }
+  },
+  "serviceDetailPage": {
+    "eyebrow": "SERVICE",
+    "back": "All services",
+    "whatIncluded": "What's included",
+    "ctaTitle": "Interested in this service?",
+    "ctaBody": "Leave a short message and let's talk through the right approach for you.",
+    "cta": "I want this service"
+  },
+  "serviceDetail": {
+    "google-seo": {
+      "title": "Google SEO",
+      "tagline": "First page, on the right keywords",
+      "intro": "Your customers should find you when they search on Google. From technical foundations to content strategy, we optimize your site end to end for search engines and build lasting visibility on the keywords that matter.",
+      "points": [
+        "Technical SEO audit and site-speed optimization",
+        "Keyword research and content plan",
+        "Monthly ranking and traffic reporting"
+      ]
+    },
+    "meta-reklamlari": {
+      "title": "Meta Ads",
+      "tagline": "Targeted reach on Facebook and Instagram",
+      "intro": "We put Meta's ad ecosystem to work for the right audience at the right budget. From campaign setup to creative production, we manage every step and turn every dollar into a measurable result.",
+      "points": [
+        "Audience segmentation and pixel setup",
+        "Ad creative and copy production",
+        "A/B testing and conversion optimization"
+      ]
+    },
+    "tiktok-reklamlari": {
+      "title": "TikTok Ads",
+      "tagline": "Stand out in a younger audience's feed",
+      "intro": "We make ads that fit TikTok's nature and don't feel like ads. We translate the platform's trends into your brand's voice and run performance campaigns without breaking the organic feel.",
+      "points": [
+        "Platform-native vertical video",
+        "Trend and sound integration",
+        "Performance-based budget management"
+      ]
+    },
+    "youtube-reklamlari": {
+      "title": "YouTube Ads",
+      "tagline": "Video ads built for results, not just views",
+      "intro": "We get the right format in front of the right viewer on YouTube. From skippable ads to bumpers, we craft every format to capture your brand story in the first second.",
+      "points": [
+        "Ad format and targeting strategy",
+        "Editing and first-three-seconds optimization",
+        "View and conversion reporting"
+      ]
+    },
+    "web-tasarimi": {
+      "title": "Web Design",
+      "tagline": "A site that reflects your brand and converts",
+      "intro": "Not templates — web experiences designed specifically for your brand. Fast, mobile-friendly and search-engine ready, with flows that turn visitors into customers.",
+      "points": [
+        "Custom design and responsive development",
+        "Speed and SEO foundation",
+        "Content management and technical maintenance"
+      ]
+    },
+    "web-otomasyonlari": {
+      "title": "Web Automation",
+      "tagline": "Hand repetitive work over to the system",
+      "intro": "We connect processes like forms, email, booking, payments and reporting, and take manual work off your plate. Your team spends time on the work itself, not the operations.",
+      "points": [
+        "Process analysis and automation design",
+        "App and service integrations",
+        "Monitoring and maintenance"
+      ]
+    },
+    "crm": {
+      "title": "CRM",
+      "tagline": "Keep every lead followed up",
+      "intro": "We move your customer relationships from scattered spreadsheets into a single system. We set up the sales funnel, follow-up steps and reports so no opportunity slips away.",
+      "points": [
+        "CRM setup and data migration",
+        "Sales funnel and automation flows",
+        "Team training and reporting"
+      ]
+    },
+    "yapay-zeka": {
+      "title": "Artificial Intelligence",
+      "tagline": "Integrate AI into your business",
+      "intro": "From content production to customer service, we adapt AI to the real needs of your business. Not an off-the-shelf tool, but a solution that fits your process.",
+      "points": [
+        "Needs analysis and solution design",
+        "Chatbot and content automation",
+        "Integration and continuous improvement"
+      ]
+    },
+    "sosyal-medya": {
+      "title": "Social Media",
+      "tagline": "A consistent, planned voice that's yours",
+      "intro": "We run your social accounts end to end, from content planning to community management. Instead of chasing trends, we build your brand's own voice and amplify it steadily.",
+      "points": [
+        "Monthly content plan and calendar",
+        "Design, shooting and copywriting",
+        "Community management and reporting"
+      ]
+    },
+    "reklam-filmi": {
+      "title": "Commercial Film",
+      "tagline": "A cinematic story that tells your brand",
+      "intro": "From concept to edit, we produce commercial films with our own directing crew. Script, shoot and post-production under one roof — no subcontractor chain, a consistent result.",
+      "points": [
+        "Concept and script development",
+        "Professional shooting and direction",
+        "Editing, color and sound post-production"
+      ]
+    },
+    "video-cekimi": {
+      "title": "Video Production",
+      "tagline": "Professional footage for every channel",
+      "intro": "Promo, product, event or social; we shoot the video content you need with professional equipment. The crew on set is ours, the responsibility is single.",
+      "points": [
+        "Multi-camera professional shooting",
+        "Lighting and sound setup",
+        "Editing and channel-specific formatting"
+      ]
+    },
+    "fotograf-cekimi": {
+      "title": "Photography",
+      "tagline": "Show your brand in the right frame",
+      "intro": "We deliver product, location, corporate and event photography at studio quality. We compose and retouch every frame to fit your brand's visual language.",
+      "points": [
+        "Product and corporate shoots",
+        "Professional lighting and set",
+        "Retouching and image editing"
+      ]
+    },
+    "kisa-film": {
+      "title": "Short Film",
+      "tagline": "A brand story told with emotion",
+      "intro": "We produce story-driven short films that go deeper than an ad. We turn your brand's values into a narrative and build an emotional connection with the audience.",
+      "points": [
+        "Script and story design",
+        "Cinematic shooting and direction",
+        "Editing, music and color"
+      ]
+    },
+    "reji-hizmeti": {
+      "title": "Broadcast Direction",
+      "tagline": "Live streaming and multi-camera direction",
+      "intro": "We direct your events, launches and live streams with our own crew. Multi-camera setup, real-time editing and broadcast flow, all from a single source.",
+      "points": [
+        "Multi-camera direction setup",
+        "Live streaming and flow management",
+        "Real-time editing and graphics"
+      ]
+    }
+  },
+  "projectsPage": {
+    "hint": "SCROLL",
+    "slides": {
+      "p1": {
+        "subtitle": "PRODUCTION",
+        "title": "Commercial Film",
+        "description": "A commercial film produced end to end with our own directing crew, telling the brand's story in a cinematic language."
+      },
+      "p2": {
+        "subtitle": "VIDEO",
+        "title": "Product Launch",
+        "description": "Multi-camera professional shooting and channel-specific editing that puts the product first."
+      },
+      "p3": {
+        "subtitle": "DIGITAL",
+        "title": "Social Media",
+        "description": "A campaign that amplifies the brand's voice steadily through planned content and community management."
+      },
+      "p4": {
+        "subtitle": "DESIGN",
+        "title": "Web Experience",
+        "description": "A custom, fast, conversion-driven web experience that turns visitors into customers."
+      },
+      "p5": {
+        "subtitle": "STORY",
+        "title": "Short Film",
+        "description": "A story-driven short film that conveys the brand's values with emotion."
+      }
+    }
+  }
+}

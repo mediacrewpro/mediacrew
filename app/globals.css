@@ -1,26 +1,166 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   KADRAJ — MediaCrew design tokens
+   Turquoise is a light source, never a fill. Blur is depth of field, not decor.
+   ========================================================================== */
+
+@theme {
+  /* Palette — void/light + 7 turquoise steps (darkest to brightest) */
+  /* Base surface. Anthracite rather than flat black — a hair of cool tint so
+     it sits with the turquoise. Every dark surface (page, hero seal, loader,
+     menu) reads from this one token, so this is the single dial for it. */
+  --color-void: #1b1e24;
+  --color-abyss: #082a38;
+  --color-deep: #0b3d4e;
+  --color-petrol: #0a5266;
+  --color-teal: #0a7285;
+  --color-signal: #0fa8ad;
+  --color-bright: #0fc6c6;
+  --color-neon: #0adce4;
+  --color-light: #f2f4f5;
+
+  /* Type — Montserrat carries everything. The `font-mono` utility is remapped
+     to Montserrat too, so the small labels/counters share the headings'
+     typeface instead of a separate monospace face. */
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
+  --font-mono: var(--font-montserrat), system-ui, sans-serif;
+
+  /* Apple discipline: oversized type, tight tracking, few weights */
+  --text-hero: clamp(4rem, 12vw, 11rem);
+  --text-hero--line-height: 0.9;
+  --text-hero--letter-spacing: -0.01em;
+  --text-hero--font-weight: 700;
+
+  --text-display: clamp(2.5rem, 7vw, 6rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.005em;
+  --text-display--font-weight: 700;
+
+  --text-title: clamp(1.75rem, 4vw, 3.5rem);
+  --text-title--line-height: 1.05;
+  --text-title--letter-spacing: 0.01em;
+  --text-title--font-weight: 500;
+
+  --text-label: 0.75rem;
+  --text-label--line-height: 1;
+  --text-label--letter-spacing: 0.18em;
+
+  /* Focus pull — the Kadraj blur scale */
+  --blur-focus-1: 4px;
+  --blur-focus-2: 12px;
+  --blur-focus-3: 24px;
+  --blur-focus-4: 40px;
+
+  /* One easing for the whole site */
+  --ease-kadraj: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    /* The void lives on <html> only. If <body> also had an opaque fill it
+       would paint OVER the CursorGlow's negative-z layer (body isn't a
+       stacking context), hiding the aurora entirely. */
+    background-color: var(--color-void);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    color: var(--color-light);
+    /* A hair of positive tracking across all body copy — Montserrat breathes a
+       little more open. Headings set their own (tighter) spacing via tokens. */
+    letter-spacing: 0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-neon);
+    color: var(--color-void);
+  }
+
+  /* Turquoise focus ring — visible, on-brand, never removed */
+  :focus-visible {
+    outline: 2px solid var(--color-neon);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ==========================================================================
+   Route transitions — the Kadraj rack focus, applied to navigation.
+   The old page falls out of focus; the new one is pulled into it.
+   These filters run on browser snapshots in the compositor, which is why a
+   blur this large is affordable here but not on live DOM.
+   ========================================================================== */
+
+::view-transition-old(.kadraj-out) {
+  animation: 200ms cubic-bezier(0.16, 1, 0.3, 1) both kadraj-defocus;
+}
+
+/* Enter waits for the exit to clear: old content leaves fast so it doesn't
+   compete, new content arrives slower so it can be read. */
+::view-transition-new(.kadraj-in) {
+  animation: 340ms cubic-bezier(0.16, 1, 0.3, 1) 190ms both kadraj-focus;
+}
+
+@keyframes kadraj-defocus {
+  to {
+    opacity: 0;
+    filter: blur(9px);
+    transform: scale(1.015);
+  }
+}
+
+@keyframes kadraj-focus {
+  from {
+    opacity: 0;
+    filter: blur(11px);
+    transform: scale(0.992);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+/* The header and cursor are the user's fixed reference points — if they slide
+   or fade with the page, the whole viewport appears to move. */
+::view-transition-group(site-header),
+::view-transition-group(site-cursor) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header),
+::view-transition-old(site-cursor) {
+  display: none; /* stops old and new headers flashing together */
+}
+::view-transition-new(site-header),
+::view-transition-new(site-cursor) {
+  animation: none;
+}
+
+/* Custom cursor active: hide the OS cursor EVERYWHERE, including over links and
+   buttons whose UA `cursor: pointer` would otherwise win and pop the finger. */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+
+/* An Awwwards site that ignores this is just a site that makes people sick. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }

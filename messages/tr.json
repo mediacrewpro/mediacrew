@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "siteName": "MediaCrew",
+    "home": {
+      "title": "MediaCrew — Markanızı odağa alıyoruz",
+      "description": "Reklam yönetimi, web, sosyal medya ve prodüksiyon tek çatı altında. Markanızı odağa alan yaratıcı ajans."
+    },
+    "services": {
+      "title": "Hizmetlerimiz — MediaCrew",
+      "description": "Google SEO'dan reklam filmine, CRM'den drone çekimine 23 hizmet. Dört alan, tek ekip."
+    },
+    "about": {
+      "title": "Hakkımızda — MediaCrew",
+      "description": "MediaCrew'in hikâyesi, yaklaşımı ve markaları odağa alan ekibi."
+    },
+    "projects": {
+      "title": "Projeler — MediaCrew",
+      "description": "Odağa aldığımız markalar ve tamamladığımız işler."
+    },
+    "why": {
+      "title": "Neden Biz — MediaCrew",
+      "description": "Tek çatı altında ekip, kendi reji kadromuz ve ölçülebilir sonuç. Neden MediaCrew ile çalışmalısınız?"
+    },
+    "contact": {
+      "title": "İletişim — MediaCrew",
+      "description": "Projenizi anlatın, bir iş günü içinde dönüş yapalım."
+    },
+    "team": {
+      "title": "Ekibimiz — MediaCrew",
+      "description": "MediaCrew'in arkasındaki ekip."
+    }
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetlerimiz",
+    "about": "Hakkımızda",
+    "projects": "Projeler",
+    "why": "Neden Biz",
+    "contact": "İletişim",
+    "team": "Ekibimiz",
+    "openMenu": "MENÜ",
+    "closeMenu": "KAPAT",
+    "cta": "İletişime Geç",
+    "switchLanguage": "Switch to English"
+  },
+  "hero": {
+    "question": "Neler Yapıyoruz?",
+    "scrollHint": "KAYDIR"
+  },
+  "loader": {
+    "loading": "Yükleniyor",
+    "skip": "ESC İLE GEÇ"
+  },
+  "home": {
+    "projects": {
+      "label": "SEÇİLİ İŞLER",
+      "title": "Odağa aldığımız markalar",
+      "viewAll": "Tüm projeler",
+      "items": {
+        "p1": { "title": "Reklam Filmi", "meta": "Prodüksiyon" },
+        "p2": { "title": "Kurumsal Kimlik", "meta": "Marka" },
+        "p3": { "title": "Sosyal Medya Kampanyası", "meta": "Dijital" },
+        "p4": { "title": "Etkinlik Çekimi", "meta": "Prodüksiyon" }
+      }
+    },
+    "why": {
+      "label": "NEDEN BİZ",
+      "title": "Görünmeyen işin karşılığı",
+      "items": {
+        "w1": {
+          "title": "Tek çatı altında",
+          "body": "Reklam yönetimi, web, sosyal medya ve prodüksiyon aynı ekipte. Ajanslar arası koordinasyon kaybı yok."
+        },
+        "w2": {
+          "title": "Kendi reji ekibimiz",
+          "body": "Çekimden canlı yayına kadar sahadaki ekip bizim. Taşeron zinciri yok, sorumluluk tek."
+        },
+        "w3": {
+          "title": "Ölçülebilir sonuç",
+          "body": "Her kampanya rakamla raporlanır. Beğeni değil, dönüşüm konuşur."
+        },
+        "w4": {
+          "title": "Marka önce gelir",
+          "body": "Trend kovalamıyoruz. Markanın kendi sesini kurup onu tutarlı biçimde çoğaltıyoruz."
+        }
+      }
+    },
+    "contact": {
+      "label": "İLETİŞİM",
+      "title": "Markanızı odağa alalım",
+      "cta": "Proje başlat",
+      "mailLabel": "E-posta"
+    }
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "navLabel": "Sayfalar"
+  },
+  "contactPage": {
+    "label": "İLETİŞİM",
+    "title": "Projenizi anlatın",
+    "intro": "Ne yapmak istediğinizi yazın, 1 iş günü içinde dönüş yapalım.",
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "company": "Marka / Şirket",
+    "message": "Projeniz",
+    "messageHint": "Kısa bir özet yeterli: ne, kimin için, ne zaman.",
+    "optional": "opsiyonel",
+    "submit": "Gönder",
+    "sending": "Gönderiliyor…",
+    "prefill": "Merhaba, {service} hizmeti hakkında bilgi almak istiyorum.",
+    "directLabel": "Doğrudan yazın",
+    "errors": {
+      "name": "Adınızı yazın.",
+      "email": "Geçerli bir e-posta adresi yazın.",
+      "message": "Birkaç cümleyle projenizi anlatın."
+    },
+    "notWired": {
+      "title": "Form henüz bağlı değil",
+      "body": "Bu formun gönderim altyapısı kurulmadı — mesajınız kimseye ulaşmaz. Şimdilik lütfen doğrudan e-posta gönderin."
+    }
+  },
+  "servicesPage": {
+    "label": "HİZMETLERİMİZ",
+    "title": "Dört alan, tek ekip",
+    "intro": "Reklamdan prodüksiyona kadar her şey aynı çatı altında yürüyor. Ajanslar arasında kaybolan brief yok.",
+    "countLabel": "hizmet",
+    "cardCta": "İncele",
+    "carouselCta": "Daha fazla hizmet için tıklayın",
+    "scrollHint": "KAYDIR"
+  },
+  "services": {
+    "ads": {
+      "title": "REKLAM YÖNETİMİ",
+      "items": {
+        "seo": "Google SEO",
+        "meta": "Meta Yönetimi",
+        "tiktok": "TikTok Reklam",
+        "youtube": "YouTube Reklam"
+      }
+    },
+    "web": {
+      "title": "WEB HİZMETLERİ",
+      "items": {
+        "design": "Web Tasarımı",
+        "crm": "CRM",
+        "automation": "Otomasyon"
+      }
+    },
+    "social": {
+      "title": "SOSYAL MEDYA",
+      "items": {
+        "instagram": "Instagram İçerik Üretimi ve Yönetimi",
+        "facebook": "Facebook İçerik Üretimi ve Yönetimi",
+        "tiktok": "TikTok İçerik Üretimi ve Yönetimi",
+        "youtube": "YouTube İçerik Üretimi ve Yönetimi"
+      }
+    },
+    "pr": {
+      "title": "PR VE PRODÜKSİYON",
+      "items": {
+        "photo": "Fotoğraf Çekimi",
+        "commercial": "Reklam Filmi",
+        "video": "Video Çekimleri",
+        "direction": "Reji Hizmeti",
+        "shortFilm": "Kısa Film",
+        "live": "Canlı Yayın",
+        "event": "Etkinlik Çekimleri",
+        "drone": "Drone Çekimleri",
+        "influencer": "Influencer PR",
+        "brand": "Marka Yönetimi",
+        "identity": "Kurumsal Kimlik Çalışması",
+        "graphic": "Grafik Tasarım"
+      }
+    }
+  },
+  "serviceDetailPage": {
+    "eyebrow": "HİZMET",
+    "back": "Tüm hizmetler",
+    "whatIncluded": "Neler dahil",
+    "ctaTitle": "Bu hizmetle ilgileniyor musunuz?",
+    "ctaBody": "Kısa bir mesaj bırakın, ihtiyacınıza özel yaklaşımı birlikte konuşalım.",
+    "cta": "Bu hizmeti almak istiyorum"
+  },
+  "serviceDetail": {
+    "google-seo": {
+      "title": "Google SEO",
+      "tagline": "Aramada ilk sayfada, doğru kelimelerde",
+      "intro": "Müşterileriniz sizi Google'da ararken bulmalı. Teknik altyapıdan içerik stratejisine kadar sitenizi arama motorları için baştan sona optimize ediyor, doğru anahtar kelimelerde kalıcı görünürlük kuruyoruz.",
+      "points": [
+        "Teknik SEO denetimi ve site hızı optimizasyonu",
+        "Anahtar kelime araştırması ve içerik planı",
+        "Aylık sıralama ve trafik raporlaması"
+      ]
+    },
+    "meta-reklamlari": {
+      "title": "Meta Reklamları",
+      "tagline": "Facebook ve Instagram'da hedefli erişim",
+      "intro": "Meta'nın reklam ekosistemini doğru kitleye, doğru bütçeyle kullanıyoruz. Kampanya kurgusundan görsel üretime kadar her adımı yönetip harcadığınız her lirayı ölçülebilir sonuca çeviriyoruz.",
+      "points": [
+        "Kitle segmentasyonu ve piksel kurulumu",
+        "Reklam görseli ve metni üretimi",
+        "A/B testleri ve dönüşüm optimizasyonu"
+      ]
+    },
+    "tiktok-reklamlari": {
+      "title": "TikTok Reklamları",
+      "tagline": "Genç kitlenin akışında öne çıkın",
+      "intro": "TikTok'un doğasına uygun, reklam gibi durmayan reklamlar üretiyoruz. Platformun trendlerini markanızın diline çevirip organik hissi bozmadan performans kampanyaları kuruyoruz.",
+      "points": [
+        "Platforma özel dikey video kurgusu",
+        "Trend ve ses entegrasyonu",
+        "Performans bazlı bütçe yönetimi"
+      ]
+    },
+    "youtube-reklamlari": {
+      "title": "YouTube Reklamları",
+      "tagline": "İzlenme değil, sonuç getiren video reklam",
+      "intro": "YouTube'da doğru formatı doğru izleyiciye ulaştırıyoruz. Atlanabilir reklamlardan bumper'lara kadar her formatı, marka hikâyenizi ilk saniyede yakalayacak şekilde kurguluyoruz.",
+      "points": [
+        "Reklam formatı ve hedefleme stratejisi",
+        "Video kurgu ve ilk-3-saniye optimizasyonu",
+        "Görüntüleme ve dönüşüm raporlaması"
+      ]
+    },
+    "web-tasarimi": {
+      "title": "Web Tasarımı",
+      "tagline": "Markanızı yansıtan, dönüşüm getiren site",
+      "intro": "Şablon değil, markanıza özel tasarlanmış web deneyimleri kuruyoruz. Hızlı, mobil uyumlu ve arama motoru dostu; ziyaretçiyi müşteriye çeviren akışlarla.",
+      "points": [
+        "Özel tasarım ve responsive geliştirme",
+        "Hız ve SEO altyapısı",
+        "İçerik yönetimi ve teknik bakım"
+      ]
+    },
+    "web-otomasyonlari": {
+      "title": "Web Otomasyonları",
+      "tagline": "Tekrarlayan işleri sisteme devredin",
+      "intro": "Form, e-posta, randevu, ödeme ve raporlama gibi süreçleri birbirine bağlayıp elle yapılan işi otomatiğe alıyoruz. Ekibiniz operasyonla değil, işin kendisiyle uğraşır.",
+      "points": [
+        "Süreç analizi ve otomasyon tasarımı",
+        "Uygulama ve servis entegrasyonları",
+        "İzleme ve bakım"
+      ]
+    },
+    "crm": {
+      "title": "CRM",
+      "tagline": "Her müşteri adayı takipte kalsın",
+      "intro": "Müşteri ilişkilerinizi dağınık tablolardan tek bir sisteme taşıyoruz. Satış hunisini, takip adımlarını ve raporları kurup hiçbir fırsatın kaybolmamasını sağlıyoruz.",
+      "points": [
+        "CRM kurulumu ve veri aktarımı",
+        "Satış hunisi ve otomasyon akışları",
+        "Ekip eğitimi ve raporlama"
+      ]
+    },
+    "yapay-zeka": {
+      "title": "Yapay Zeka",
+      "tagline": "Yapay zekayı işinize entegre edin",
+      "intro": "İçerik üretiminden müşteri hizmetlerine kadar yapay zekayı işinizin gerçek ihtiyaçlarına göre uyarlıyoruz. Hazır bir araç değil, sürecinize oturan bir çözüm kuruyoruz.",
+      "points": [
+        "İhtiyaç analizi ve çözüm tasarımı",
+        "Chatbot ve içerik otomasyonu",
+        "Entegrasyon ve sürekli iyileştirme"
+      ]
+    },
+    "sosyal-medya": {
+      "title": "Sosyal Medya",
+      "tagline": "Tutarlı, planlı, markanıza ait bir ses",
+      "intro": "Sosyal medya hesaplarınızı içerik planından topluluk yönetimine kadar baştan sona yürütüyoruz. Trend kovalamak yerine markanızın kendi sesini kurup düzenli çoğaltıyoruz.",
+      "points": [
+        "Aylık içerik planı ve takvim",
+        "Tasarım, çekim ve metin üretimi",
+        "Topluluk yönetimi ve raporlama"
+      ]
+    },
+    "reklam-filmi": {
+      "title": "Reklam Filmi",
+      "tagline": "Markanızı anlatan sinematik hikâye",
+      "intro": "Konseptten kurguya kendi reji ekibimizle reklam filmleri üretiyoruz. Senaryo, çekim ve post prodüksiyon aynı çatı altında; taşeron zinciri yok, sonuç tutarlı.",
+      "points": [
+        "Konsept ve senaryo geliştirme",
+        "Profesyonel çekim ve yönetmenlik",
+        "Kurgu, renk ve ses post prodüksiyonu"
+      ]
+    },
+    "video-cekimi": {
+      "title": "Video Çekimi",
+      "tagline": "Her mecra için profesyonel görüntü",
+      "intro": "Tanıtım, ürün, etkinlik ya da sosyal medya; ihtiyacınıza uygun video içeriklerini profesyonel ekipmanla çekiyoruz. Sahadaki ekip bizim, sorumluluk tek.",
+      "points": [
+        "Çok kameralı profesyonel çekim",
+        "Işık ve ses kurulumu",
+        "Kurgu ve mecraya özel formatlama"
+      ]
+    },
+    "fotograf-cekimi": {
+      "title": "Fotoğraf Çekimi",
+      "tagline": "Markanızı doğru kadrajda gösterin",
+      "intro": "Ürün, mekân, kurumsal ve etkinlik fotoğrafçılığını stüdyo kalitesinde sunuyoruz. Her kareyi markanızın görsel diline uygun kurgulayıp rötuşluyoruz.",
+      "points": [
+        "Ürün ve kurumsal çekim",
+        "Profesyonel ışık ve set",
+        "Rötuş ve görsel düzenleme"
+      ]
+    },
+    "kisa-film": {
+      "title": "Kısa Film",
+      "tagline": "Duyguyla anlatılan marka hikâyesi",
+      "intro": "Reklamdan daha derin, hikâye odaklı kısa filmler üretiyoruz. Markanızın değerlerini bir anlatıya dönüştürüp izleyiciyle duygusal bağ kuruyoruz.",
+      "points": [
+        "Senaryo ve hikâye tasarımı",
+        "Sinematik çekim ve yönetmenlik",
+        "Kurgu, müzik ve renk"
+      ]
+    },
+    "reji-hizmeti": {
+      "title": "Reji Hizmeti",
+      "tagline": "Canlı yayın ve çok kameralı reji",
+      "intro": "Etkinlik, lansman ve canlı yayınlarınızı kendi reji kadromuzla yönetiyoruz. Çok kameralı kurulum, anlık kurgu ve yayın akışı tek elden.",
+      "points": [
+        "Çok kameralı reji kurulumu",
+        "Canlı yayın ve akış yönetimi",
+        "Anlık kurgu ve grafik"
+      ]
+    }
+  },
+  "projectsPage": {
+    "hint": "KAYDIR",
+    "slides": {
+      "p1": {
+        "subtitle": "PRODÜKSİYON",
+        "title": "Reklam Filmi",
+        "description": "Konseptten kurguya kendi reji ekibimizle ürettiğimiz, markanın hikâyesini sinematik bir dille anlatan reklam filmi."
+      },
+      "p2": {
+        "subtitle": "VİDEO",
+        "title": "Ürün Tanıtımı",
+        "description": "Ürünü öne çıkaran çok kameralı profesyonel çekim ve mecraya özel kurgu."
+      },
+      "p3": {
+        "subtitle": "DİJİTAL",
+        "title": "Sosyal Medya",
+        "description": "Planlı içerik ve topluluk yönetimiyle markanın sesini düzenli çoğaltan kampanya."
+      },
+      "p4": {
+        "subtitle": "TASARIM",
+        "title": "Web Deneyimi",
+        "description": "Markaya özel, hızlı ve dönüşüm getiren; ziyaretçiyi müşteriye çeviren web deneyimi."
+      },
+      "p5": {
+        "subtitle": "HİKÂYE",
+        "title": "Kısa Film",
+        "description": "Markanın değerlerini duyguyla anlatan, hikâye odaklı kısa film."
+      }
+    }
+  }
+}

@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local raw design sources, downloads & tooling — not part of the app.
+# (Optimized assets that ship live under public/.)
+/*.exe
+/*.winmd
+/*.png
+/*.mp4
+/*.webm
+/Kartlar/
+/Hizmetlerimiz Kart Görselleri/
