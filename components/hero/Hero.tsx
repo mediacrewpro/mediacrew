@@ -1,9 +1,16 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { gsap, useGSAP } from '@/lib/gsap';
 import { useLowPerf } from '@/lib/perf';
+
+// Mobile intro is a pre-rendered frame sequence drawn to a canvas, not a
+// scrubbed <video>: seeking a paused video is unreliable across phones (blank
+// on some, janky on others). Drawing images is identical everywhere.
+const FRAME_COUNT = 77;
+const framePath = (i: number) =>
+  `/hero-frames/f${String(i + 1).padStart(3, '0')}.webp`;
 
 // WebGL needs a real canvas; never render this on the server.
 const Bokeh = dynamic(
@@ -24,6 +31,58 @@ type HeroProps = {
 
 export function Hero({ question, services }: HeroProps) {
   const root = useRef<HTMLDivElement>(null);
+
+  // Mobile frame-sequence plumbing. `drawFrameRef` is the bridge the scroll
+  // timeline calls; `lastIdxRef` remembers the current frame across resizes.
+  const framesRef = useRef<HTMLImageElement[]>([]);
+  const drawFrameRef = useRef<(i: number) => void>(() => {});
+  const lastIdxRef = useRef(0);
+
+  // Preload the frames and wire the canvas — mobile only, so desktop never
+  // downloads them. Draws the first frame the moment it decodes.
+  useEffect(() => {
+    if (!window.matchMedia('(max-width: 767px)').matches) return;
+    const canvas = root.current?.querySelector<HTMLCanvasElement>(
+      '[data-scrub-canvas]',
+    );
+    const ctx = canvas?.getContext('2d');
+    if (!canvas || !ctx) return;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const size = () => {
+      canvas.width = Math.round(canvas.clientWidth * dpr);
+      canvas.height = Math.round(canvas.clientHeight * dpr);
+    };
+    size();
+
+    const draw = (idx: number) => {
+      const img = framesRef.current[idx];
+      if (!img || !img.complete || !img.naturalWidth) return;
+      const cw = canvas.width;
+      const ch = canvas.height;
+      const scale = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+      const dw = img.naturalWidth * scale;
+      const dh = img.naturalHeight * scale;
+      ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+    };
+    drawFrameRef.current = draw;
+
+    const imgs: HTMLImageElement[] = [];
+    for (let i = 0; i < FRAME_COUNT; i++) {
+      const img = new Image();
+      img.src = framePath(i);
+      if (i === 0) img.onload = () => draw(lastIdxRef.current);
+      imgs.push(img);
+    }
+    framesRef.current = imgs;
+
+    const onResize = () => {
+      size();
+      draw(lastIdxRef.current);
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   // three.js is ~866KB. The bokeh isn't visible until ~65% of this sequence,
   // so loading it on first paint just delays the video the visitor came for.
@@ -66,7 +125,7 @@ export function Hero({ question, services }: HeroProps) {
 
           // Reduced motion: no scroll hijack, no blur. Everything simply exists.
           if (reduced) {
-            gsap.set('[data-scrub-video]', { opacity: 0 });
+            gsap.set('[data-scrub-media]', { opacity: 0 });
             gsap.set('[data-center-line]', { scaleY: 1, opacity: 1 });
             gsap.set('[data-question-text], [data-service]', {
               opacity: 1,
@@ -145,9 +204,17 @@ export function Hero({ question, services }: HeroProps) {
               p: 1,
               duration: SCRUB_UNITS,
               onUpdate: () => {
-                const v = scrubVideo;
-                if (v && v.duration && v.readyState >= 2) {
-                  v.currentTime = scrubProxy.p * (v.duration - 0.05);
+                if (desktop) {
+                  // Desktop: seek the 2K video.
+                  const v = scrubVideo;
+                  if (v && v.duration && v.readyState >= 2) {
+                    v.currentTime = scrubProxy.p * (v.duration - 0.05);
+                  }
+                } else {
+                  // Mobile: draw the matching frame — deterministic everywhere.
+                  const idx = Math.round(scrubProxy.p * (FRAME_COUNT - 1));
+                  lastIdxRef.current = idx;
+                  drawFrameRef.current(idx);
                 }
               },
             },
@@ -171,7 +238,7 @@ export function Hero({ question, services }: HeroProps) {
               Q_OUT,
             )
             // The video fades away so the white services scene can show beneath.
-            .to('[data-scrub-video]', { opacity: 0, duration: 1 }, Q_OUT);
+            .to('[data-scrub-media]', { opacity: 0, duration: 1 }, Q_OUT);
 
           // A short beat, then the services — no long dark breath.
           const SERVICES_IN = Q_OUT + 0.4;
@@ -300,23 +367,31 @@ export function Hero({ question, services }: HeroProps) {
           from the timeline). 2K, dense keyframes for smooth seeking; it fades
           out straight into the services scene below. */}
       <div className="absolute inset-0 z-10">
+        {/* Desktop — the 2K landscape video, scrubbed by scroll. */}
         <video
           data-scrub-video
+          data-scrub-media
           muted
           playsInline
           preload="auto"
           aria-hidden
-          className="h-full w-full object-cover"
+          className="hidden h-full w-full object-cover md:block"
         >
-          {/* Phones load the vertical cut; wider screens the 2K landscape one.
-              The browser picks the first matching source, so only one downloads. */}
+          {/* media-scoped so phones (which use the canvas) never fetch the 2K. */}
           <source
-            src="/video/site-intro-vertical.mp4"
-            media="(max-width: 767px)"
+            src="/video/site-intro.mp4"
+            media="(min-width: 768px)"
             type="video/mp4"
           />
-          <source src="/video/site-intro.mp4" type="video/mp4" />
         </video>
+        {/* Mobile — the frame sequence painted to a canvas (reliable on every
+            phone; no video seeking). */}
+        <canvas
+          data-scrub-canvas
+          data-scrub-media
+          aria-hidden
+          className="h-full w-full md:hidden"
+        />
       </div>
 
       {/* Scene 2 — the question, over the video's final frame. */}
