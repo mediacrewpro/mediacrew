@@ -308,6 +308,13 @@ export function Hero({ question, services }: HeroProps) {
           aria-hidden
           className="h-full w-full object-cover"
         >
+          {/* Phones load the vertical cut; wider screens the 2K landscape one.
+              The browser picks the first matching source, so only one downloads. */}
+          <source
+            src="/video/site-intro-vertical.mp4"
+            media="(max-width: 767px)"
+            type="video/mp4"
+          />
           <source src="/video/site-intro.mp4" type="video/mp4" />
         </video>
       </div>
