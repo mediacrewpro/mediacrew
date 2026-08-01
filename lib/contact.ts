@@ -5,10 +5,7 @@
  */
 export const CONTACT = {
   email: 'mediacrewpro@gmail.com',
-  phones: [
-    { display: '0535 068 55 57', e164: '+905350685557' },
-    { display: '0542 471 76 14', e164: '+905424717614' },
-  ],
+  phones: [{ display: '0535 068 55 57', e164: '+905350685557' }],
   instagram: {
     handle: '@mediacrew.pro',
     url: 'https://www.instagram.com/mediacrew.pro/',
