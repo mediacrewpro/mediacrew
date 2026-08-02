@@ -30,7 +30,7 @@ function Row({
               alt={logo.alt}
               loading="lazy"
               draggable={false}
-              className="h-9 w-auto max-w-[9rem] object-contain opacity-55 grayscale transition-all duration-300 [filter:brightness(0)_invert(1)] hover:opacity-100 md:h-11 md:max-w-[11rem]"
+              className="h-10 w-auto max-w-[10rem] object-contain opacity-80 transition-opacity duration-300 hover:opacity-100 md:h-12 md:max-w-[12rem]"
             />
           </li>
         ))}
