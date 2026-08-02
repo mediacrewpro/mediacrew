@@ -61,6 +61,7 @@ export default async function LocaleLayout({
     { href: '/about', label: tNav('about') },
     { href: '/projects', label: tNav('projects') },
     { href: '/why-us', label: tNav('why') },
+    { href: '/blog', label: tNav('blog') },
     { href: '/contact', label: tNav('contact') },
   ];
 

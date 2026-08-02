@@ -28,6 +28,10 @@
     "team": {
       "title": "Team — MediaCrew",
       "description": "The people behind MediaCrew."
+    },
+    "blog": {
+      "title": "Blog | MediaCrew",
+      "description": "Up-to-date guides and insights on digital marketing, SEO, social media and production that grow your brand."
     }
   },
   "nav": {
@@ -41,7 +45,8 @@
     "openMenu": "MENU",
     "closeMenu": "CLOSE",
     "cta": "Get in Touch",
-    "switchLanguage": "Türkçe'ye geç"
+    "switchLanguage": "Türkçe'ye geç",
+    "blog": "Blog"
   },
   "hero": {
     "question": "What We Do",
@@ -426,5 +431,15 @@
     "telegram": "Message on Telegram",
     "call": "Call us",
     "toggle": "Contact channels"
+  },
+  "blogPage": {
+    "label": "BLOG",
+    "title": "Insights that grow your brand",
+    "intro": "Actionable guides on SEO, advertising, social media and production, drawn from our team’s work in the field.",
+    "readingSuffix": "min read",
+    "backToBlog": "All posts",
+    "ctaTitle": "Let’s apply these strategies for your brand",
+    "ctaButton": "Get in touch",
+    "empty": "New posts coming here soon."
   }
 }

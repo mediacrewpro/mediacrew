@@ -17,6 +17,8 @@ export const pathnames = {
   '/about': { tr: '/hakkimizda', en: '/about' },
   '/projects': { tr: '/projeler', en: '/projects' },
   '/why-us': { tr: '/neden-biz', en: '/why-us' },
+  '/blog': '/blog',
+  '/blog/[slug]': '/blog/[slug]',
   '/contact': { tr: '/iletisim', en: '/contact' },
 } as const;
 

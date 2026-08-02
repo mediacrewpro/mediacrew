@@ -28,6 +28,10 @@
     "team": {
       "title": "Ekibimiz — MediaCrew",
       "description": "MediaCrew'in arkasındaki ekip."
+    },
+    "blog": {
+      "title": "Blog | MediaCrew",
+      "description": "Dijital pazarlama, SEO, sosyal medya ve prodüksiyon üzerine markanızı büyüten güncel rehberler ve içgörüler."
     }
   },
   "nav": {
@@ -41,7 +45,8 @@
     "openMenu": "MENÜ",
     "closeMenu": "KAPAT",
     "cta": "İletişime Geç",
-    "switchLanguage": "Switch to English"
+    "switchLanguage": "Switch to English",
+    "blog": "Blog"
   },
   "hero": {
     "question": "Neler Yapıyoruz?",
@@ -426,5 +431,15 @@
     "telegram": "Telegram'dan yazın",
     "call": "Bizi arayın",
     "toggle": "İletişim kanalları"
+  },
+  "blogPage": {
+    "label": "BLOG",
+    "title": "Markanızı büyüten içgörüler",
+    "intro": "SEO, reklam, sosyal medya ve prodüksiyon üzerine; ekibimizin sahadan çıkardığı uygulanabilir rehberler.",
+    "readingSuffix": "dk okuma",
+    "backToBlog": "Tüm yazılar",
+    "ctaTitle": "Bu stratejileri markanız için uygulayalım",
+    "ctaButton": "İletişime geçin",
+    "empty": "Yakında yeni yazılar burada."
   }
 }

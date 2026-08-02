@@ -8,6 +8,7 @@ import {
 } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/metadata';
 import { generatedServiceCards } from '@/lib/service-cards.generated';
+import { BLOG_POSTS } from '@/lib/blog';
 
 // Stamped once at build time; a stable value keeps the sitemap deterministic.
 const LAST_MODIFIED = new Date().toISOString();
@@ -24,18 +25,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (href) => !href.includes('['),
   );
 
-  // Static pathnames are those without a `[param]` segment — safe to pass to
-  // getPathname as a bare string; the dynamic one must carry its params object.
-  type StaticPath = Exclude<AppPathname, `${string}[${string}`>;
-
   const entry = (
     href: AppPathname,
     params?: Record<string, string>,
   ): MetadataRoute.Sitemap[number] => {
     const at = (locale: (typeof locales)[number]) => {
-      const target = params
-        ? ({ pathname: '/services/[slug]', params: { slug: params.slug } } as const)
-        : (href as StaticPath);
+      // Static routes pass a bare string; dynamic ones (/services/[slug],
+      // /blog/[slug]) pass pathname + params. The discriminated href union
+      // can't express that generically, so we assert the accepted shape.
+      const target = (
+        params ? { pathname: href, params } : href
+      ) as unknown as Parameters<typeof getPathname>[0]['href'];
       return `${SITE_URL}${getPathname({ locale, href: target })}`;
     };
     return {
@@ -53,5 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...generatedServiceCards.map((c) =>
       entry('/services/[slug]', { slug: c.slug }),
     ),
+    // One entry per blog post.
+    ...BLOG_POSTS.map((p) => entry('/blog/[slug]', { slug: p.slug })),
   ];
 }
