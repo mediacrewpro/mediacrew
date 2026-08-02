@@ -13,6 +13,7 @@ import {
   ProjectsPreview,
   type ProjectItem,
 } from '@/components/sections/ProjectsPreview';
+import { BrandMarquee } from '@/components/sections/BrandMarquee';
 import { WhyUs, type WhyItem } from '@/components/sections/WhyUs';
 import { ContactCta } from '@/components/sections/ContactCta';
 import { generatedServiceCards } from '@/lib/service-cards.generated';
@@ -113,6 +114,8 @@ export default async function HomePage({
         viewAll={t('home.projects.viewAll')}
         projects={projectItems}
       />
+
+      <BrandMarquee />
 
       <WhyUs
         label={t('home.why.label')}

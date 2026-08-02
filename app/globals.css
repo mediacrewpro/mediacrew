@@ -167,3 +167,16 @@ html.custom-cursor * {
     animation-delay: 0s !important;
   }
 }
+
+/* ==========================================================================
+   Brand logo marquee — two rows scrolling in opposite directions. The track
+   holds two identical copies, so translateX(-50%) loops seamlessly.
+   ========================================================================== */
+@keyframes marquee-left {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes marquee-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
