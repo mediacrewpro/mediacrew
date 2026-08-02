@@ -49,3 +49,5 @@ next-env.d.ts
 /*.webm
 /Kartlar/
 /Hizmetlerimiz Kart Görselleri/
+/*.jpg
+/*.jpeg

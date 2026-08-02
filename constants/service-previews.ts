@@ -129,7 +129,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   // ── Social Media ───────────────────────────────────────────────
   'social:instagram': {
     accent: '#e1306c',
-    image: img('sosyal-medya'),
+    image: '/services/preview/social-instagram.webp',
     motif: 'camera',
     frame: 'phone',
     desc: {
@@ -143,7 +143,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'social:facebook': {
     accent: '#1877f2',
-    image: img('sosyal-medya'),
+    image: '/services/preview/social-facebook.webp',
     motif: 'graph',
     frame: 'browser',
     desc: {
@@ -187,7 +187,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   // ── Production & PR ────────────────────────────────────────────
   'pr:photo': {
     accent: '#f5b74c',
-    image: img('fotograf-cekimi'),
+    image: '/services/preview/pr-photo.webp',
     motif: 'camera',
     frame: 'plain',
     desc: {
@@ -201,7 +201,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:commercial': {
     accent: '#ff6a3d',
-    image: img('reklam-filmi'),
+    image: '/services/preview/pr-commercial.webp',
     motif: 'film',
     frame: 'plain',
     desc: {
@@ -215,7 +215,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:video': {
     accent: '#ff8a5b',
-    image: img('video-cekimi'),
+    image: '/services/preview/pr-video.webp',
     motif: 'film',
     frame: 'plain',
     desc: {
@@ -229,7 +229,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:direction': {
     accent: '#c084fc',
-    image: img('reji-hizmeti'),
+    image: '/services/preview/pr-direction.webp',
     motif: 'film',
     frame: 'plain',
     desc: {
@@ -243,7 +243,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:shortFilm': {
     accent: '#f472b6',
-    image: img('kisa-film'),
+    image: '/services/preview/pr-shortfilm.webp',
     motif: 'film',
     frame: 'plain',
     desc: {
@@ -257,7 +257,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:live': {
     accent: '#ef4444',
-    image: img('video-cekimi'),
+    image: '/services/preview/pr-live.webp',
     motif: 'film',
     frame: 'browser',
     desc: {
@@ -271,7 +271,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:event': {
     accent: '#f59e0b',
-    image: img('fotograf-cekimi'),
+    image: '/services/preview/pr-event.webp',
     motif: 'camera',
     frame: 'plain',
     desc: {
@@ -285,7 +285,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:drone': {
     accent: '#38bdf8',
-    image: img('video-cekimi'),
+    image: '/services/preview/pr-drone.webp',
     motif: 'camera',
     frame: 'plain',
     desc: {
@@ -299,7 +299,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:influencer': {
     accent: '#e11d74',
-    image: img('sosyal-medya'),
+    image: '/services/preview/pr-influencer.webp',
     motif: 'nodes',
     frame: 'phone',
     desc: {
@@ -313,7 +313,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:brand': {
     accent: '#a78bfa',
-    image: img('yapay-zeka'),
+    image: '/services/preview/pr-brand.webp',
     motif: 'nodes',
     frame: 'browser',
     desc: {
@@ -327,7 +327,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:identity': {
     accent: '#34d399',
-    image: img('web-tasarimi'),
+    image: '/services/preview/pr-identity.webp',
     motif: 'nodes',
     frame: 'browser',
     desc: {
@@ -341,7 +341,7 @@ export const SERVICE_PREVIEWS: Record<string, ServicePreview> = {
   },
   'pr:graphic': {
     accent: '#f472b6',
-    image: img('web-tasarimi'),
+    image: '/services/preview/pr-graphic.webp',
     motif: 'nodes',
     frame: 'browser',
     desc: {
