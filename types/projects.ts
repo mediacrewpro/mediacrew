@@ -5,6 +5,8 @@ export type Project = {
   subtitle: string;
   description: string;
   image: string;
+  /** Portrait cut used on phones only; desktop keeps `image`. */
+  imageMobile?: string;
   href?: string;
 };
 

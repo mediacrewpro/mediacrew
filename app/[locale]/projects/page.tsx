@@ -31,6 +31,7 @@ export default async function ProjectsPage({
   const projects: Project[] = PROJECT_SLIDES.map((slide) => ({
     key: slide.key,
     image: slide.image,
+    imageMobile: slide.imageMobile,
     title: t(`slides.${slide.key}.title`),
     subtitle: t(`slides.${slide.key}.subtitle`),
     description: t(`slides.${slide.key}.description`),

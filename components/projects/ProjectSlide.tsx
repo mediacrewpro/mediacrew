@@ -67,12 +67,22 @@ export function ProjectSlide({ index, project, config, register }: Props) {
           ref={image}
           className="absolute inset-0 [backface-visibility:hidden] will-change-transform"
         >
-          <img
-            src={project.image}
-            alt=""
-            draggable={false}
-            className="h-full w-full object-cover"
-          />
+          {/* Phones get the portrait cut; desktop is untouched (the img src
+              is the default source, only overridden below 768px). */}
+          <picture>
+            {project.imageMobile && (
+              <source
+                media="(max-width: 767px)"
+                srcSet={project.imageMobile}
+              />
+            )}
+            <img
+              src={project.image}
+              alt=""
+              draggable={false}
+              className="h-full w-full object-cover"
+            />
+          </picture>
         </div>
 
         <div
