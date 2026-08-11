@@ -21,6 +21,8 @@ export type PortfolioImage = { src: string; alt: string };
 export type PortfolioProject = {
   /** Maps to the projects-slider key so the detail shares its copy. */
   projectKey: 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6';
+  /** Optional wide hero banner behind the detail-page header. */
+  banner?: string;
   videos: PortfolioVideo[];
   images: PortfolioImage[];
 };
@@ -55,6 +57,7 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
   },
   'sosyal-medya': {
     projectKey: 'p3',
+    banner: '/portfolio/sosyal-medya/banner.webp',
     videos: [
       { title: 'KIA Akvaryum', youtube: 'tYUMYzTFnS4', vertical: true },
       { title: 'Nadir Fırıncıoğlu — Gümüşoğlu Apt.', youtube: '826j8ViMPPE', vertical: true },

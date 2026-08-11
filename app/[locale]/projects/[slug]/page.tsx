@@ -83,17 +83,44 @@ export default async function ProjectDetailPage({
           {t('projectDetail.back')}
         </Link>
 
-        <header className="mt-10 max-w-3xl">
-          <p className="mb-4 font-mono text-label uppercase tracking-[0.28em] text-neon/90">
-            {subtitle}
-          </p>
-          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-light">
-            {title}
-          </h1>
-          <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-light/60">
-            {description}
-          </p>
-        </header>
+        {project.banner ? (
+          <header className="relative mt-8 flex min-h-[300px] items-end overflow-hidden rounded-2xl border border-petrol/40 md:min-h-[440px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.banner}
+              alt=""
+              aria-hidden
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/20"
+            />
+            <div className="relative p-7 md:p-12">
+              <p className="mb-4 font-mono text-label uppercase tracking-[0.28em] text-neon/90">
+                {subtitle}
+              </p>
+              <h1 className="text-[clamp(2.25rem,6vw,5rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-light">
+                {title}
+              </h1>
+              <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-light/70 md:text-lg">
+                {description}
+              </p>
+            </div>
+          </header>
+        ) : (
+          <header className="mt-10 max-w-3xl">
+            <p className="mb-4 font-mono text-label uppercase tracking-[0.28em] text-neon/90">
+              {subtitle}
+            </p>
+            <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-light">
+              {title}
+            </h1>
+            <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-light/60">
+              {description}
+            </p>
+          </header>
+        )}
 
         {/* Videos — presentation-style, streamed from YouTube. */}
         <section className="mt-16 md:mt-24">
