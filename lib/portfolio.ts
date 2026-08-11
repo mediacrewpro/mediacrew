@@ -131,7 +131,9 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
       {
         name: 'Skola',
         url: 'https://skolakurs.com',
-        image: '/portfolio/web-deneyimi/skolakurs.webp',
+        image: '/portfolio/web-deneyimi/skolakurs-poster.webp',
+        preview: '/portfolio/web-deneyimi/skolakurs.mp4',
+        aspect: '1920 / 944',
         desc: {
           tr: 'Bir YKS eğitim kurumu için modern ve dönüşüm odaklı bir site. Programlar, kadro, YKS rehberi ve WhatsApp danışma akışı; güven veren istatistiklerle desteklenen premium bir tasarım.',
           en: 'A modern, conversion-focused site for a university-prep education brand. Programmes, staff, an exam guide and a WhatsApp consultation flow, in a premium design backed by trust-building stats.',
