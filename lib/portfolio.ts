@@ -84,6 +84,18 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
       { src: '/portfolio/sosyal-medya/post-9.webp', alt: 'Sosyal medya postu 9' },
     ],
   },
+  'web-deneyimi': {
+    projectKey: 'p4',
+    banner: '/portfolio/web-deneyimi/banner.webp',
+    videos: [],
+    images: [],
+  },
+  'kisa-film': {
+    projectKey: 'p5',
+    banner: '/portfolio/kisa-film/banner.webp',
+    videos: [],
+    images: [],
+  },
   'reji-hizmeti': {
     projectKey: 'p6',
     videos: [
