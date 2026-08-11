@@ -63,12 +63,16 @@ export default async function ProjectDetailPage({
   setRequestLocale(locale);
 
   const t = await getTranslations();
+  const lang = locale === 'en' ? 'en' : 'tr';
   const key = project.projectKey;
   const subtitle = t(`projectsPage.slides.${key}.subtitle`);
   const title = t(`projectsPage.slides.${key}.title`);
   const description = t(`projectsPage.slides.${key}.description`);
 
   const videos = project.videos.filter((v) => v.youtube || v.src);
+  const sites = project.sites ?? [];
+  const isEmpty =
+    videos.length === 0 && sites.length === 0 && project.images.length === 0;
 
   return (
     <main className="relative px-6 pb-32 pt-36 md:px-16 md:pt-44">
@@ -111,12 +115,61 @@ export default async function ProjectDetailPage({
           </p>
         </header>
 
+        {/* Launched websites (Web Deneyimi). */}
+        {sites.length > 0 && (
+          <section className="mt-16 md:mt-24">
+            <h2 className="mb-8 font-mono text-label uppercase tracking-[0.28em] text-signal">
+              {t('projectDetail.sitesTitle')}
+            </h2>
+            <div className="grid gap-8 md:grid-cols-2">
+              {sites.map((site) => (
+                <article
+                  key={site.url}
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-petrol/40 bg-abyss/30 transition-all duration-500 hover:-translate-y-1.5 hover:border-neon/60"
+                >
+                  <a
+                    href={site.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block aspect-video overflow-hidden border-b border-petrol/40"
+                    aria-label={site.name}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={site.image}
+                      alt={site.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  </a>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="text-2xl font-medium tracking-tight text-light">
+                      {site.name}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-light/60 md:text-base">
+                      {site.desc[lang]}
+                    </p>
+                    <a
+                      href={site.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center gap-2 font-mono text-label uppercase tracking-[0.2em] text-neon transition-colors hover:text-light"
+                    >
+                      {t('projectDetail.visitSite')} <span aria-hidden>↗</span>
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Videos — presentation-style, streamed from YouTube. */}
-        <section className="mt-16 md:mt-24">
-          <h2 className="mb-8 font-mono text-label uppercase tracking-[0.28em] text-signal">
-            {t('projectDetail.worksTitle')}
-          </h2>
-          {videos.length > 0 ? (
+        {videos.length > 0 && (
+          <section className="mt-16 md:mt-24">
+            <h2 className="mb-8 font-mono text-label uppercase tracking-[0.28em] text-signal">
+              {t('projectDetail.worksTitle')}
+            </h2>
             <div className="flex flex-wrap justify-center gap-6">
               {videos.map((v) => (
                 <figure
@@ -153,12 +206,15 @@ export default async function ProjectDetailPage({
                 </figure>
               ))}
             </div>
-          ) : (
-            <p className="rounded-2xl border border-petrol/30 bg-abyss/30 px-6 py-8 text-center text-light/50">
-              {t('projectDetail.comingSoon')}
-            </p>
-          )}
-        </section>
+          </section>
+        )}
+
+        {/* Nothing published yet. */}
+        {isEmpty && (
+          <p className="mt-16 rounded-2xl border border-petrol/30 bg-abyss/30 px-6 py-8 text-center text-light/50 md:mt-24">
+            {t('projectDetail.comingSoon')}
+          </p>
+        )}
 
         {/* Stills / posts — self-hosted images. */}
         {project.images.length > 0 && (

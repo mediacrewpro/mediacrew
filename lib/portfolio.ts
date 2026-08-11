@@ -18,6 +18,14 @@ export type PortfolioVideo = {
 };
 export type PortfolioImage = { src: string; alt: string };
 
+/** A launched website case (screenshot + live link + bilingual blurb). */
+export type PortfolioSite = {
+  name: string;
+  url: string;
+  image: string;
+  desc: { tr: string; en: string };
+};
+
 export type PortfolioProject = {
   /** Maps to the projects-slider key so the detail shares its copy. */
   projectKey: 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6';
@@ -25,6 +33,8 @@ export type PortfolioProject = {
   banner?: string;
   videos: PortfolioVideo[];
   images: PortfolioImage[];
+  /** Launched websites (Web Deneyimi). */
+  sites?: PortfolioSite[];
 };
 
 export const PORTFOLIO: Record<string, PortfolioProject> = {
@@ -89,6 +99,35 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
     banner: '/portfolio/web-deneyimi/banner.webp',
     videos: [],
     images: [],
+    sites: [
+      {
+        name: 'Turuncu Motors',
+        url: 'https://turuncumotor.com',
+        image: '/portfolio/web-deneyimi/turuncumotor.webp',
+        desc: {
+          tr: 'Antalya merkezli motosiklet kiralama markası için sinematik, koyu temalı ve çok dilli bir deneyim. Animasyonlu hero, filo ve rota sayfaları, WhatsApp + rezervasyon akışı; aramalarda görünür olacak SEO altyapısı.',
+          en: 'A cinematic, dark-themed and multilingual experience for an Antalya-based motorcycle rental brand. Animated hero, fleet & route pages, a WhatsApp + booking flow, and an SEO foundation built for search visibility.',
+        },
+      },
+      {
+        name: 'Doğrular Seramik',
+        url: 'https://dogrularseramik.com',
+        image: '/portfolio/web-deneyimi/dogrularseramik.webp',
+        desc: {
+          tr: 'Seramik ve vitrifiye markası için lüks ve hızlı bir katalog sitesi. Ürün ile vitrifiye koleksiyonları, kataloglar, blog ve "örnek iste" akışı; sade, premium bir estetik.',
+          en: 'A luxury, fast catalogue site for a ceramics & sanitaryware brand. Product and sanitaryware collections, catalogues, a blog and a “request a sample” flow, in a clean, premium aesthetic.',
+        },
+      },
+      {
+        name: 'Skola',
+        url: 'https://skolakurs.com',
+        image: '/portfolio/web-deneyimi/skolakurs.webp',
+        desc: {
+          tr: 'Bir YKS eğitim kurumu için modern ve dönüşüm odaklı bir site. Programlar, kadro, YKS rehberi ve WhatsApp danışma akışı; güven veren istatistiklerle desteklenen premium bir tasarım.',
+          en: 'A modern, conversion-focused site for a university-prep education brand. Programmes, staff, an exam guide and a WhatsApp consultation flow, in a premium design backed by trust-building stats.',
+        },
+      },
+    ],
   },
   'kisa-film': {
     projectKey: 'p5',
