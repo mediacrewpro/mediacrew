@@ -98,6 +98,7 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
   },
   'reji-hizmeti': {
     projectKey: 'p6',
+    banner: '/portfolio/reji-hizmeti/banner.webp',
     videos: [
       { title: 'Reji — 01', youtube: 'hZ9UsDhk5EQ', vertical: true },
       { title: 'Reji — 02', youtube: 'Wg1pMkkqTaI', vertical: true },
