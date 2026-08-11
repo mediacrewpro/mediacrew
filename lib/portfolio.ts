@@ -9,7 +9,10 @@
  */
 export type PortfolioVideo = {
   title: string;
+  /** YouTube id for embedded (streamed) clips. Empty if self-hosted via `src`. */
   youtube: string;
+  /** Self-hosted mp4 (public path) — rendered in a native <video> player. */
+  src?: string;
   /** Vertical (Shorts / 9:16) — rendered in a phone-shaped player. */
   vertical?: boolean;
 };
@@ -26,8 +29,13 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
   'reklam-filmi': {
     projectKey: 'p1',
     videos: [
-      { title: 'KIA Akvaryum', youtube: '' },
-      { title: 'Bıçakçı Naim — Sarı Saplı', youtube: '' },
+      { title: 'KIA Akvaryum', youtube: 'tYUMYzTFnS4', vertical: true },
+      {
+        title: 'Bıçakçı Naim — Sarı Saplı',
+        youtube: '',
+        src: '/portfolio/reklam-filmi/bicakci-naim-sari-sapli.mp4',
+        vertical: true,
+      },
     ],
     images: [
       { src: '/portfolio/reklam-filmi/dogrular-seramik.webp', alt: 'Doğrular Seramik' },

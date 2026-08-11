@@ -68,7 +68,7 @@ export default async function ProjectDetailPage({
   const title = t(`projectsPage.slides.${key}.title`);
   const description = t(`projectsPage.slides.${key}.description`);
 
-  const videos = project.videos.filter((v) => v.youtube);
+  const videos = project.videos.filter((v) => v.youtube || v.src);
 
   return (
     <main className="px-6 pb-32 pt-36 md:px-16 md:pt-44">
@@ -104,22 +104,32 @@ export default async function ProjectDetailPage({
             <div className="flex flex-wrap justify-center gap-6">
               {videos.map((v) => (
                 <figure
-                  key={v.youtube}
+                  key={v.src ?? v.youtube}
                   className={`w-full overflow-hidden rounded-2xl border border-petrol/40 bg-abyss/30 ${
                     v.vertical ? 'max-w-[300px]' : 'max-w-[560px]'
                   }`}
                 >
                   <div
-                    className={`relative ${v.vertical ? 'aspect-[9/16]' : 'aspect-video'}`}
+                    className={`relative bg-void ${v.vertical ? 'aspect-[9/16]' : 'aspect-video'}`}
                   >
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${v.youtube}`}
-                      title={v.title}
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      className="absolute inset-0 h-full w-full"
-                    />
+                    {v.src ? (
+                      <video
+                        src={v.src}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="absolute inset-0 h-full w-full"
+                      />
+                    ) : (
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${v.youtube}`}
+                        title={v.title}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="absolute inset-0 h-full w-full"
+                      />
+                    )}
                   </div>
                   <figcaption className="px-5 py-4 text-sm text-light/70">
                     {v.title}
