@@ -109,7 +109,9 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
       {
         name: 'Turuncu Motors',
         url: 'https://turuncumotor.com',
-        image: '/portfolio/web-deneyimi/turuncumotor.webp',
+        image: '/portfolio/web-deneyimi/turuncumotor-poster.webp',
+        preview: '/portfolio/web-deneyimi/turuncumotor.mp4',
+        aspect: '1920 / 950',
         desc: {
           tr: 'Antalya merkezli motosiklet kiralama markası için sinematik, koyu temalı ve çok dilli bir deneyim. Animasyonlu hero, filo ve rota sayfaları, WhatsApp + rezervasyon akışı; aramalarda görünür olacak SEO altyapısı.',
           en: 'A cinematic, dark-themed and multilingual experience for an Antalya-based motorcycle rental brand. Animated hero, fleet & route pages, a WhatsApp + booking flow, and an SEO foundation built for search visibility.',
