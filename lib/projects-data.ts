@@ -29,4 +29,9 @@ export const PROJECT_SLIDES = [
     image: '/projects/kisa-film.webp',
     imageMobile: '/projects/kisa-film-mobile.webp',
   },
+  {
+    key: 'p6',
+    image: '/services/cards/reji-hizmeti.webp',
+    imageMobile: '/services/cards/reji-hizmeti.webp',
+  },
 ] as const;

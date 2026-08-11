@@ -20,7 +20,7 @@ export type PortfolioImage = { src: string; alt: string };
 
 export type PortfolioProject = {
   /** Maps to the projects-slider key so the detail shares its copy. */
-  projectKey: 'p1' | 'p2' | 'p3' | 'p4' | 'p5';
+  projectKey: 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6';
   videos: PortfolioVideo[];
   images: PortfolioImage[];
 };
@@ -78,6 +78,17 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
       { src: '/portfolio/sosyal-medya/post-8.webp', alt: 'Sosyal medya postu 8' },
       { src: '/portfolio/sosyal-medya/post-9.webp', alt: 'Sosyal medya postu 9' },
     ],
+  },
+  'reji-hizmeti': {
+    projectKey: 'p6',
+    videos: [
+      { title: 'Reji — 01', youtube: 'hZ9UsDhk5EQ', vertical: true },
+      { title: 'Reji — 02', youtube: 'Wg1pMkkqTaI', vertical: true },
+      { title: 'Reji — 03', youtube: 'pna-HQ7uiYU', vertical: true },
+      { title: 'Reji — 04', youtube: 'bQEtee6Nhvk', vertical: true },
+      { title: 'Reji — 05', youtube: '77dljEuuZUY', vertical: true },
+    ],
+    images: [],
   },
 };
 
