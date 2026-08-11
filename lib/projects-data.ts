@@ -31,7 +31,7 @@ export const PROJECT_SLIDES = [
   },
   {
     key: 'p6',
-    image: '/services/cards/reji-hizmeti.webp',
-    imageMobile: '/services/cards/reji-hizmeti.webp',
+    image: '/projects/reji.webp',
+    imageMobile: '/projects/reji.webp',
   },
 ] as const;
