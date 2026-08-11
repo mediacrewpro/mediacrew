@@ -7,7 +7,12 @@
  * the page ships now and lights up video-by-video as ids arrive. Images are
  * self-hosted (small, lossless enough) under /portfolio/<slug>/.
  */
-export type PortfolioVideo = { title: string; youtube: string };
+export type PortfolioVideo = {
+  title: string;
+  youtube: string;
+  /** Vertical (Shorts / 9:16) — rendered in a phone-shaped player. */
+  vertical?: boolean;
+};
 export type PortfolioImage = { src: string; alt: string };
 
 export type PortfolioProject = {
@@ -31,9 +36,9 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
   'urun-tanitimi': {
     projectKey: 'p2',
     videos: [
-      { title: 'Bıçakçı Naim vs Nano Burger', youtube: '' },
-      { title: 'Düzel Grup — Ürün Tanıtımı', youtube: '' },
-      { title: 'Tarihi Bizim Künefeci', youtube: '' },
+      { title: 'Bıçakçı Naim vs Nano Burger', youtube: 'n6kRZQXRUYY', vertical: true },
+      { title: 'Düzel Grup — Ürün Tanıtımı', youtube: 'yRjDeVpUmAk', vertical: true },
+      { title: 'Tarihi Bizim Künefeci', youtube: 'sOwtqm1QA94', vertical: true },
     ],
     images: [
       { src: '/portfolio/urun-tanitimi/paxoy-waffle.webp', alt: 'Paxoy Waffle' },

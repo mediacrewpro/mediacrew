@@ -101,13 +101,17 @@ export default async function ProjectDetailPage({
             {t('projectDetail.worksTitle')}
           </h2>
           {videos.length > 0 ? (
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="flex flex-wrap justify-center gap-6">
               {videos.map((v) => (
                 <figure
                   key={v.youtube}
-                  className="overflow-hidden rounded-2xl border border-petrol/40 bg-abyss/30"
+                  className={`w-full overflow-hidden rounded-2xl border border-petrol/40 bg-abyss/30 ${
+                    v.vertical ? 'max-w-[300px]' : 'max-w-[560px]'
+                  }`}
                 >
-                  <div className="relative aspect-video">
+                  <div
+                    className={`relative ${v.vertical ? 'aspect-[9/16]' : 'aspect-video'}`}
+                  >
                     <iframe
                       src={`https://www.youtube-nocookie.com/embed/${v.youtube}`}
                       title={v.title}
