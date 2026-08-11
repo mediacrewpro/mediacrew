@@ -30,6 +30,7 @@ export type PortfolioProject = {
 export const PORTFOLIO: Record<string, PortfolioProject> = {
   'reklam-filmi': {
     projectKey: 'p1',
+    banner: '/portfolio/reklam-filmi/banner.webp',
     videos: [
       { title: 'KIA Akvaryum', youtube: 'tYUMYzTFnS4', vertical: true },
       {
@@ -45,6 +46,7 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
   },
   'urun-tanitimi': {
     projectKey: 'p2',
+    banner: '/portfolio/urun-tanitimi/banner.webp',
     videos: [
       { title: 'Bıçakçı Naim vs Nano Burger', youtube: 'n6kRZQXRUYY', vertical: true },
       { title: 'Düzel Grup — Ürün Tanıtımı', youtube: 'yRjDeVpUmAk', vertical: true },

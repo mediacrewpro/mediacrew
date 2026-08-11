@@ -71,8 +71,24 @@ export default async function ProjectDetailPage({
   const videos = project.videos.filter((v) => v.youtube || v.src);
 
   return (
-    <main className="px-6 pb-32 pt-36 md:px-16 md:pt-44">
-      <div className="mx-auto max-w-6xl">
+    <main className="relative px-6 pb-32 pt-36 md:px-16 md:pt-44">
+      {/* Full-bleed banner behind the header, fading into the page. */}
+      {project.banner && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-[560px] overflow-hidden md:h-[720px]"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={project.banner}
+            alt=""
+            className="h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-void/40 via-void/55 to-void" />
+        </div>
+      )}
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <Link
           href="/projects"
           className="group inline-flex items-center gap-2 font-mono text-label text-teal transition-colors duration-300 hover:text-neon"
@@ -83,44 +99,17 @@ export default async function ProjectDetailPage({
           {t('projectDetail.back')}
         </Link>
 
-        {project.banner ? (
-          <header className="relative mt-8 flex min-h-[300px] items-end overflow-hidden rounded-2xl border border-petrol/40 md:min-h-[440px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={project.banner}
-              alt=""
-              aria-hidden
-              className="absolute inset-0 h-full w-full object-cover object-center"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/20"
-            />
-            <div className="relative p-7 md:p-12">
-              <p className="mb-4 font-mono text-label uppercase tracking-[0.28em] text-neon/90">
-                {subtitle}
-              </p>
-              <h1 className="text-[clamp(2.25rem,6vw,5rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-light">
-                {title}
-              </h1>
-              <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-light/70 md:text-lg">
-                {description}
-              </p>
-            </div>
-          </header>
-        ) : (
-          <header className="mt-10 max-w-3xl">
-            <p className="mb-4 font-mono text-label uppercase tracking-[0.28em] text-neon/90">
-              {subtitle}
-            </p>
-            <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-light">
-              {title}
-            </h1>
-            <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-light/60">
-              {description}
-            </p>
-          </header>
-        )}
+        <header className={`max-w-3xl ${project.banner ? 'mt-24 md:mt-40' : 'mt-10'}`}>
+          <p className="mb-4 font-mono text-label uppercase tracking-[0.28em] text-neon/90">
+            {subtitle}
+          </p>
+          <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-light [text-shadow:0_4px_30px_rgba(0,0,0,0.5)]">
+            {title}
+          </h1>
+          <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-light/70 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
+            {description}
+          </p>
+        </header>
 
         {/* Videos — presentation-style, streamed from YouTube. */}
         <section className="mt-16 md:mt-24">
