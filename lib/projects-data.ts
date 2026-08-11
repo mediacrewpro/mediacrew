@@ -25,11 +25,6 @@ export const PROJECT_SLIDES = [
     imageMobile: '/projects/web-deneyimi-mobile.webp',
   },
   {
-    key: 'p5',
-    image: '/projects/kisa-film.webp',
-    imageMobile: '/projects/kisa-film-mobile.webp',
-  },
-  {
     key: 'p6',
     image: '/projects/reji.webp',
     imageMobile: '/projects/reji.webp',

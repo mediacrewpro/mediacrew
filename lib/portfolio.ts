@@ -34,7 +34,7 @@ export type PortfolioSite = {
 
 export type PortfolioProject = {
   /** Maps to the projects-slider key so the detail shares its copy. */
-  projectKey: 'p1' | 'p2' | 'p3' | 'p4' | 'p5' | 'p6';
+  projectKey: 'p1' | 'p2' | 'p3' | 'p4' | 'p6';
   /** Optional wide hero banner behind the detail-page header. */
   banner?: string;
   videos: PortfolioVideo[];
@@ -140,12 +140,6 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
         },
       },
     ],
-  },
-  'kisa-film': {
-    projectKey: 'p5',
-    banner: '/portfolio/kisa-film/banner.webp',
-    videos: [],
-    images: [],
   },
   'reji-hizmeti': {
     projectKey: 'p6',
