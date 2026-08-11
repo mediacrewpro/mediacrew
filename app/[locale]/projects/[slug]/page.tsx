@@ -131,16 +131,30 @@ export default async function ProjectDetailPage({
                     href={site.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative block aspect-video overflow-hidden border-b border-petrol/40"
+                    style={{ aspectRatio: site.aspect ?? '16 / 9' }}
+                    className="relative block overflow-hidden border-b border-petrol/40"
                     aria-label={site.name}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={site.image}
-                      alt={site.name}
-                      loading="lazy"
-                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
+                    {site.preview ? (
+                      <video
+                        src={site.preview}
+                        poster={site.image}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={site.image}
+                        alt={site.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                      />
+                    )}
                   </a>
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="text-2xl font-medium tracking-tight text-light">

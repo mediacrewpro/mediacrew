@@ -18,11 +18,17 @@ export type PortfolioVideo = {
 };
 export type PortfolioImage = { src: string; alt: string };
 
-/** A launched website case (screenshot + live link + bilingual blurb). */
+/** A launched website case (visual + live link + bilingual blurb). */
 export type PortfolioSite = {
   name: string;
   url: string;
+  /** Still image / video poster. */
   image: string;
+  /** Optional muted autoplay-loop video shown in place of the still (GIF-style). */
+  preview?: string;
+  /** CSS aspect-ratio for the card media (defaults to 16/9). Match the video so
+   *  no letterbox shows. */
+  aspect?: string;
   desc: { tr: string; en: string };
 };
 
@@ -112,7 +118,9 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
       {
         name: 'Doğrular Seramik',
         url: 'https://dogrularseramik.com',
-        image: '/portfolio/web-deneyimi/dogrularseramik.webp',
+        image: '/portfolio/web-deneyimi/dogrularseramik-poster.webp',
+        preview: '/portfolio/web-deneyimi/dogrularseramik.mp4',
+        aspect: '1920 / 950',
         desc: {
           tr: 'Seramik ve vitrifiye markası için lüks ve hızlı bir katalog sitesi. Ürün ile vitrifiye koleksiyonları, kataloglar, blog ve "örnek iste" akışı; sade, premium bir estetik.',
           en: 'A luxury, fast catalogue site for a ceramics & sanitaryware brand. Product and sanitaryware collections, catalogues, a blog and a “request a sample” flow, in a clean, premium aesthetic.',
