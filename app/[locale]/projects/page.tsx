@@ -5,6 +5,7 @@ import { isAppLocale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/metadata';
 import { CinematicSlider } from '@/components/projects/CinematicSlider';
 import { PROJECT_SLIDES } from '@/lib/projects-data';
+import { KEY_TO_SLUG } from '@/lib/portfolio';
 import type { Project } from '@/types/projects';
 
 export async function generateMetadata({
@@ -32,6 +33,7 @@ export default async function ProjectsPage({
     key: slide.key,
     image: slide.image,
     imageMobile: slide.imageMobile,
+    detailSlug: KEY_TO_SLUG[slide.key],
     title: t(`slides.${slide.key}.title`),
     subtitle: t(`slides.${slide.key}.subtitle`),
     description: t(`slides.${slide.key}.description`),

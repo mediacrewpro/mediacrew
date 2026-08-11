@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { Link } from '@/i18n/navigation';
 import type { Project, SliderConfig } from '@/types/projects';
 
 /** The live element handles the render loop drives every frame. */
@@ -102,34 +103,60 @@ export function ProjectSlide({ index, project, config, register }: Props) {
 
             {/* Chromatic stack: red + cyan ghosts sit BEHIND the white base, so
                 at rest (opacity 0) the title is perfectly crisp white. This box
-                also carries the rotate/skew distortion. */}
-            <div
-              ref={stack}
-              className="relative inline-block [transform-style:preserve-3d] will-change-transform"
-            >
-              <span
-                ref={red}
-                aria-hidden
-                className={`${HEADING} absolute inset-0 will-change-transform`}
-                style={{ color: 'rgb(255,40,90)', opacity: 0 }}
-              >
-                {project.title}
-              </span>
-              <span
-                ref={cyan}
-                aria-hidden
-                className={`${HEADING} absolute inset-0 will-change-transform`}
-                style={{ color: 'rgb(40,220,255)', opacity: 0 }}
-              >
-                {project.title}
-              </span>
-              <h2
-                tabIndex={0}
-                className={`${HEADING} relative text-light outline-none [text-shadow:0_6px_34px_rgba(0,0,0,0.5)]`}
-              >
-                {project.title}
-              </h2>
-            </div>
+                also carries the rotate/skew distortion. When the project has a
+                case study, the whole heading is a link to it. */}
+            {(() => {
+              const stackEl = (
+                <div
+                  ref={stack}
+                  className="relative inline-block [transform-style:preserve-3d] will-change-transform"
+                >
+                  <span
+                    ref={red}
+                    aria-hidden
+                    className={`${HEADING} absolute inset-0 will-change-transform`}
+                    style={{ color: 'rgb(255,40,90)', opacity: 0 }}
+                  >
+                    {project.title}
+                  </span>
+                  <span
+                    ref={cyan}
+                    aria-hidden
+                    className={`${HEADING} absolute inset-0 will-change-transform`}
+                    style={{ color: 'rgb(40,220,255)', opacity: 0 }}
+                  >
+                    {project.title}
+                  </span>
+                  <h2
+                    tabIndex={project.detailSlug ? -1 : 0}
+                    className={`${HEADING} relative text-light outline-none [text-shadow:0_6px_34px_rgba(0,0,0,0.5)]`}
+                  >
+                    {project.title}
+                  </h2>
+                </div>
+              );
+
+              return project.detailSlug ? (
+                <Link
+                  href={{
+                    pathname: '/projects/[slug]',
+                    params: { slug: project.detailSlug },
+                  }}
+                  aria-label={project.title}
+                  className="group/case relative inline-block cursor-pointer rounded-sm outline-none [transform-style:preserve-3d] focus-visible:ring-2 focus-visible:ring-neon"
+                >
+                  {stackEl}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute left-1/2 top-full mt-4 hidden -translate-x-1/2 items-center gap-2 whitespace-nowrap font-mono text-label uppercase tracking-[0.28em] text-neon opacity-0 transition-opacity duration-300 group-hover/case:opacity-100 md:inline-flex"
+                  >
+                    İncele <span>↗</span>
+                  </span>
+                </Link>
+              ) : (
+                stackEl
+              );
+            })()}
 
             <p className="mx-auto mt-6 max-w-[44ch] text-base leading-relaxed text-light/70 [text-shadow:0_2px_16px_rgba(0,0,0,0.65)] md:text-lg">
               {project.description}

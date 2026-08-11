@@ -9,6 +9,7 @@ import {
 import { SITE_URL } from '@/lib/metadata';
 import { generatedServiceCards } from '@/lib/service-cards.generated';
 import { BLOG_POSTS } from '@/lib/blog';
+import { PORTFOLIO } from '@/lib/portfolio';
 
 // Stamped once at build time; a stable value keeps the sitemap deterministic.
 const LAST_MODIFIED = new Date().toISOString();
@@ -55,5 +56,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
     // One entry per blog post.
     ...BLOG_POSTS.map((p) => entry('/blog/[slug]', { slug: p.slug })),
+    // One entry per project case study.
+    ...Object.keys(PORTFOLIO).map((slug) =>
+      entry('/projects/[slug]', { slug }),
+    ),
   ];
 }

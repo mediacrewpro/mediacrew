@@ -477,5 +477,13 @@
       "closing": "If you have an idea, let’s talk while it’s still raw. That’s where the best work comes from.",
       "cta": "Get in touch"
     }
+  },
+  "projectDetail": {
+    "back": "All projects",
+    "worksTitle": "Work",
+    "galleryTitle": "Gallery",
+    "comingSoon": "Videos coming here soon.",
+    "ctaTitle": "Want work like this?",
+    "ctaButton": "Get in touch"
   }
 }

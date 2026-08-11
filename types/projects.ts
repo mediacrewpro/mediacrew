@@ -7,6 +7,8 @@ export type Project = {
   image: string;
   /** Portrait cut used on phones only; desktop keeps `image`. */
   imageMobile?: string;
+  /** When set, the slide title links to /projects/<detailSlug> (a case study). */
+  detailSlug?: string;
   href?: string;
 };
 

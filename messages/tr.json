@@ -477,5 +477,13 @@
       "closing": "Aklınızda bir fikir varsa, hâlâ ham haldeyken konuşalım. En iyi işler orada çıkıyor.",
       "cta": "İletişime geçin"
     }
+  },
+  "projectDetail": {
+    "back": "Tüm projeler",
+    "worksTitle": "Çalışmalar",
+    "galleryTitle": "Kareler",
+    "comingSoon": "Videolar yakında burada.",
+    "ctaTitle": "Benzer bir iş mi istiyorsun?",
+    "ctaButton": "İletişime geçin"
   }
 }
