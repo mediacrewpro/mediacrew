@@ -441,5 +441,41 @@
     "ctaTitle": "Let’s apply these strategies for your brand",
     "ctaButton": "Get in touch",
     "empty": "New posts coming here soon."
+  },
+  "aboutPage": {
+    "label": "About",
+    "heading": "We’re Media Crew. The “crew” in our name is no accident — this work isn’t done alone.",
+    "intro": "One brand needs to be told through a camera, another through a single Instagram post. Sometimes both. That’s exactly why we don’t split the work apart: idea, shoot, edit, design, ad management and social — all at the same table, with the same team.",
+    "do": {
+      "title": "What we do",
+      "body": "We shoot commercials and promo videos. We run social accounts end to end, from content to comments. We set up ads on Meta and Google and track the budget so nothing is wasted. Brand identity, logo, corporate design — all in scope. From photography to drone footage, from websites to e-commerce infrastructure, we cover it."
+    },
+    "how": {
+      "title": "How we work",
+      "steps": [
+        {
+          "lead": "First, we listen.",
+          "body": "Applying the same template to everyone would be easy — but it doesn’t work. A café and a construction firm don’t share the same goal or the same language. So we start from scratch: what do you sell, who do you sell it to, what can’t you get across?"
+        },
+        {
+          "lead": "Then we create.",
+          "body": "Fast, but never rushed."
+        },
+        {
+          "lead": "And we watch the numbers.",
+          "body": "We don’t call work that looks nice but brings no results “good work”. We tell you plainly what’s working and what isn’t."
+        }
+      ]
+    },
+    "why": {
+      "title": "Why us",
+      "reasons": [
+        "Because we’re not a team chasing a single trick.",
+        "Because when you message, you get an answer.",
+        "Because we want to like what comes out at the end, too."
+      ],
+      "closing": "If you have an idea, let’s talk while it’s still raw. That’s where the best work comes from.",
+      "cta": "Get in touch"
+    }
   }
 }

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { isAppLocale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/metadata';
-import { PagePlaceholder } from '@/components/layout/PagePlaceholder';
+import { AboutStory } from '@/components/sections/AboutStory';
 
 export async function generateMetadata({
   params,
@@ -23,6 +23,5 @@ export default async function AboutPage({
   const { locale } = await params;
   if (!isAppLocale(locale)) notFound();
   setRequestLocale(locale);
-  const t = await getTranslations('nav');
-  return <PagePlaceholder title={t('about')} />;
+  return <AboutStory />;
 }

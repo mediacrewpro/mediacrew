@@ -441,5 +441,41 @@
     "ctaTitle": "Bu stratejileri markanız için uygulayalım",
     "ctaButton": "İletişime geçin",
     "empty": "Yakında yeni yazılar burada."
+  },
+  "aboutPage": {
+    "label": "Hakkımızda",
+    "heading": "Biz Media Crew'uz. Adımızda “ekip” olması tesadüf değil — bu iş tek başına yapılmıyor.",
+    "intro": "Bir markanın kamerayla, bir başkasının tek bir Instagram postuyla anlatılması gerekiyor. Kimi zaman ikisi birden. Biz de tam bu yüzden işi parçalara bölmüyoruz: fikir, çekim, kurgu, tasarım, reklam yönetimi ve sosyal medya — hepsi aynı masada, aynı ekiple.",
+    "do": {
+      "title": "Ne yapıyoruz?",
+      "body": "Reklam filmi ve tanıtım videosu çekiyoruz. Sosyal medya hesaplarını içerikten yorumlara kadar biz yönetiyoruz. Meta ve Google tarafında reklamları kuruyor, bütçeyi boşa harcamadan takip ediyoruz. Marka kimliği, logo, kurumsal tasarım — hepsi kapsam içinde. Fotoğraf çekiminden drone görüntüsüne, web sitesinden e-ticaret altyapısına kadar uzanıyoruz."
+    },
+    "how": {
+      "title": "Nasıl çalışıyoruz?",
+      "steps": [
+        {
+          "lead": "Önce dinliyoruz.",
+          "body": "Herkese aynı şablonu uygulamak kolay olurdu ama işe yaramıyor. Bir kafeyle bir inşaat firmasının hedefi de dili de aynı değil. Biz de sıfırdan başlıyoruz: siz ne satıyorsunuz, kime satıyorsunuz, neyi anlatamıyorsunuz?"
+        },
+        {
+          "lead": "Sonra üretiyoruz.",
+          "body": "Hızlı, ama acele etmeden."
+        },
+        {
+          "lead": "Ve rakamlara bakıyoruz.",
+          "body": "Güzel görünen ama sonuç getirmeyen işe “iyi iş” demiyoruz. Neyin çalıştığını, neyin çalışmadığını size açık açık söylüyoruz."
+        }
+      ]
+    },
+    "why": {
+      "title": "Neden biz?",
+      "reasons": [
+        "Çünkü tek numara arayan bir ekip değiliz.",
+        "Çünkü mesaj attığınızda cevap alıyorsunuz.",
+        "Çünkü işin sonunda ortaya çıkan şeyi biz de beğenmek istiyoruz."
+      ],
+      "closing": "Aklınızda bir fikir varsa, hâlâ ham haldeyken konuşalım. En iyi işler orada çıkıyor.",
+      "cta": "İletişime geçin"
+    }
   }
 }
