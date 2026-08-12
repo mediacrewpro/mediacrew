@@ -183,7 +183,7 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
       { title: "Can Bonomo Reji Hizmeti", youtube: 'pna-HQ7uiYU', vertical: true },
       { title: "Patron Reji Hizmeti", youtube: 'bQEtee6Nhvk', vertical: true },
       { title: "Köfn Reji Hizmeti", youtube: '77dljEuuZUY', vertical: true },
-      { title: "Rey Protocol Reklam Filmi 1", youtube: 'EXkXeHe5ROw' },
+      { title: "Rey Protocol Reklam Filmi 1", youtube: 'EXkXeHe5ROw', vertical: true },
     ],
     images: [],
   },
