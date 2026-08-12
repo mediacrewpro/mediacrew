@@ -55,6 +55,7 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
         src: '/portfolio/reklam-filmi/bicakci-naim-sari-sapli.mp4',
         vertical: true,
       },
+      { title: "Rey Protocol Reklam Filmi 1", youtube: 'EXkXeHe5ROw', vertical: true },
     ],
     images: [
       { src: '/portfolio/reklam-filmi/dogrular-seramik.webp', alt: 'Doğrular Seramik' },
@@ -183,7 +184,6 @@ export const PORTFOLIO: Record<string, PortfolioProject> = {
       { title: "Can Bonomo Reji Hizmeti", youtube: 'pna-HQ7uiYU', vertical: true },
       { title: "Patron Reji Hizmeti", youtube: 'bQEtee6Nhvk', vertical: true },
       { title: "Köfn Reji Hizmeti", youtube: '77dljEuuZUY', vertical: true },
-      { title: "Rey Protocol Reklam Filmi 1", youtube: 'EXkXeHe5ROw', vertical: true },
     ],
     images: [],
   },
